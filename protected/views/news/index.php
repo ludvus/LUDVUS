@@ -14,13 +14,13 @@ $this->breadcrumbs=array(
 <?php else: ?>
 	<?php foreach ($news as $new): ?>
 		<h2><?php echo $new['virsraksts']; ?></h2>
-		<hr>
+		<hr />
 		<p><?php echo nl2br($new['teksts']); ?></p>
 		<p>
 			<small>Autors: <?php echo $new['autors']; ?>. Laiks: <?php echo $new['ts']; ?></small>
 			<?php echo CHtml::link('Labot', array('edit', 'id'=>$new['id'])); ?>
 		</p>
-		<hr>
+		<hr />
 	<?php endforeach; ?>
 <?php endif; ?>
 <p>
