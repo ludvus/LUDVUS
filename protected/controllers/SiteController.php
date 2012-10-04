@@ -55,11 +55,13 @@ class SiteController extends Controller
 	public function actionProfile()
 	{
 		$this->allowUser(1);
-		
+		$fakultates = null;
 		switch (Yii::app()->user->user_type)
 		{
 			case 1:
 				$data = Iemitnieki::model()->findByAttributes(array('id'=>Yii::app()->user->user_id));
+				$fakultates = CHtml::listData(Fakultates::model()->findAll(), 'id', 'nosaukums');
+
 				$render = 'iemitnieki_form';
 				break;
 			case 2:
@@ -91,7 +93,7 @@ class SiteController extends Controller
 				$this->redirect(array('profile'));
 		}
 
-		$this->render($render, array('model'=>$data));
+		$this->render($render, array('model'=>$data, 'fakultates'=>$fakultates));
 	}
 
 	/**

@@ -1001,3 +1001,166 @@ Stack trace:
 #9 {main}
 REQUEST_URI=/index.php?r=site/profile
 ---
+2012/10/04 13:52:17 [error] [php] Missing argument 3 for CActiveForm::dropDownList(), called in C:\xampp\htdocs\protected\views\site\iemitnieki_form.php on line 38 and defined (C:\xampp\htdocs\yii\web\widgets\CActiveForm.php:762)
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CBaseController.php(96): SiteController->renderInternal()
+#1 C:\xampp\htdocs\yii\web\CController.php(870): SiteController->renderFile()
+#2 C:\xampp\htdocs\yii\web\CController.php(783): SiteController->renderPartial()
+#3 C:\xampp\htdocs\protected\controllers\SiteController.php(95): SiteController->render()
+#4 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionProfile()
+#5 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\yii\web\CController.php(287): SiteController->runAction()
+#7 C:\xampp\htdocs\yii\web\CController.php(266): SiteController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(283): SiteController->run()
+#9 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/profile
+in C:\xampp\htdocs\protected\views\site\iemitnieki_form.php (38)
+in C:\xampp\htdocs\protected\controllers\SiteController.php (95)
+in C:\xampp\htdocs\index.php (13)
+2012/10/04 13:53:17 [error] [php] Object of class Fakultates could not be converted to string (C:\xampp\htdocs\yii\web\helpers\CHtml.php:1978)
+Stack trace:
+#0 C:\xampp\htdocs\protected\views\site\iemitnieki_form.php(38): CActiveForm->dropDownList()
+#1 C:\xampp\htdocs\yii\web\CBaseController.php(127): require()
+#2 C:\xampp\htdocs\yii\web\CBaseController.php(96): SiteController->renderInternal()
+#3 C:\xampp\htdocs\yii\web\CController.php(870): SiteController->renderFile()
+#4 C:\xampp\htdocs\yii\web\CController.php(783): SiteController->renderPartial()
+#5 C:\xampp\htdocs\protected\controllers\SiteController.php(95): SiteController->render()
+#6 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionProfile()
+#7 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\yii\web\CController.php(287): SiteController->runAction()
+#9 C:\xampp\htdocs\yii\web\CController.php(266): SiteController->runActionWithFilters()
+#10 C:\xampp\htdocs\yii\web\CWebApplication.php(283): SiteController->run()
+#11 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#12 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/profile
+in C:\xampp\htdocs\protected\views\site\iemitnieki_form.php (38)
+in C:\xampp\htdocs\protected\controllers\SiteController.php (95)
+in C:\xampp\htdocs\index.php (13)
+2012/10/04 14:01:27 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (C:\xampp\htdocs\yii\web\helpers\CHtml.php:85)
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\helpers\CHtml.php(140): renderAttributes()
+#1 C:\xampp\htdocs\yii\web\helpers\CHtml.php(1525): tag()
+#2 C:\xampp\htdocs\yii\web\widgets\CActiveForm.php(764): activeDropDownList()
+#3 C:\xampp\htdocs\protected\views\site\iemitnieki_form.php(38): CActiveForm->dropDownList()
+#4 C:\xampp\htdocs\yii\web\CBaseController.php(127): require()
+#5 C:\xampp\htdocs\yii\web\CBaseController.php(96): SiteController->renderInternal()
+#6 C:\xampp\htdocs\yii\web\CController.php(870): SiteController->renderFile()
+#7 C:\xampp\htdocs\yii\web\CController.php(783): SiteController->renderPartial()
+#8 C:\xampp\htdocs\protected\controllers\SiteController.php(96): SiteController->render()
+#9 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionProfile()
+#10 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams()
+#11 C:\xampp\htdocs\yii\web\CController.php(287): SiteController->runAction()
+#12 C:\xampp\htdocs\yii\web\CController.php(266): SiteController->runActionWithFilters()
+#13 C:\xampp\htdocs\yii\web\CWebApplication.php(283): SiteController->run()
+#14 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#15 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/profile
+in C:\xampp\htdocs\protected\views\site\iemitnieki_form.php (38)
+in C:\xampp\htdocs\protected\controllers\SiteController.php (96)
+in C:\xampp\htdocs\index.php (13)
+2012/10/04 14:10:36 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('user/admin')
+#9 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://localhost/index.php?r=user/index
+---
+2012/10/04 14:18:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Jums nav tiesību apmeklēt šo lapu' in C:\xampp\htdocs\protected\components\Controller.php:29
+Stack trace:
+#0 C:\xampp\htdocs\protected\controllers\UserController.php(41): Controller->allowUser(3)
+#1 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): UserController->actionCreate()
+#2 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('create')
+#11 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('user/create')
+#12 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=user/create
+HTTP_REFERER=http://localhost/index.php?r=user/view&id=1
+---
+2012/10/04 14:18:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Jums nav tiesību apmeklēt šo lapu' in C:\xampp\htdocs\protected\components\Controller.php:29
+Stack trace:
+#0 C:\xampp\htdocs\protected\controllers\UserController.php(41): Controller->allowUser(3)
+#1 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): UserController->actionCreate()
+#2 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('create')
+#11 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('user/create')
+#12 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=user/create
+HTTP_REFERER=http://localhost/index.php?r=user/view&id=1
+---
+2012/10/04 14:18:32 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Jums nav tiesību apmeklēt šo lapu' in C:\xampp\htdocs\protected\components\Controller.php:29
+Stack trace:
+#0 C:\xampp\htdocs\protected\controllers\UserController.php(93): Controller->allowUser(3)
+#1 [internal function]: UserController->actionDelete('1')
+#2 C:\xampp\htdocs\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\web\CController.php(1117): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(59): CController->filterPostOnly(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\web\CController.php(292): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('delete')
+#16 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('user/delete')
+#17 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=user/delete&id=1
+HTTP_REFERER=http://localhost/index.php?r=user/view&id=1
+---
+2012/10/04 14:18:36 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Jums nav tiesību apmeklēt šo lapu' in C:\xampp\htdocs\protected\components\Controller.php:29
+Stack trace:
+#0 C:\xampp\htdocs\protected\controllers\UserController.php(120): Controller->allowUser(3)
+#1 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): UserController->actionAdmin()
+#2 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('admin')
+#11 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('user/admin')
+#12 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://localhost/index.php?r=user/view&id=1
+---

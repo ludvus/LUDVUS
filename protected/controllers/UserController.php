@@ -20,37 +20,13 @@ class UserController extends Controller
 	}
 
 	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
-	public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
-
-	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	public function actionView($id)
 	{
+		$this->allowUser(2);
+
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -62,6 +38,8 @@ class UserController extends Controller
 	 */
 	public function actionCreate()
 	{
+		$this->allowUser(3);
+
 		$model=new Users;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -70,7 +48,6 @@ class UserController extends Controller
 		if(isset($_POST['Users']))
 		{
 			$model->attributes=$_POST['Users'];
-                        $model->pass = sha1($_POST['Users']['pass']);
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->ID));
 		}
@@ -87,6 +64,8 @@ class UserController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		$this->allowUser(3);
+
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -111,6 +90,8 @@ class UserController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$this->allowUser(3);
+
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
@@ -123,6 +104,8 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$this->allowUser(2);
+
 		$dataProvider=new CActiveDataProvider('Users');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
@@ -134,6 +117,8 @@ class UserController extends Controller
 	 */
 	public function actionAdmin()
 	{
+		$this->allowUser(3);
+
 		$model=new Users('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Users']))

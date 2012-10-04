@@ -97,7 +97,7 @@
                     <div class="menu">
                     <?php $this->widget('zii.widgets.CMenu',array(
                         'items'=>array(
-                            array('label'=>'Lietotāji', 'url'=>array('/site/index')),
+                            array('label'=>'Lietotāji', 'url'=>array('/user/index')),
                             array('label'=>'Brīdinājumi', 'url'=>array('/site/page', 'view'=>'about')),
                             array('label'=>'Maksājumi', 'url'=>array('/site/contact')),
                             array('label'=>'Jaunumi', 'url'=>array('/news')),
@@ -117,7 +117,7 @@
                     <div class="menu">
                     <?php $this->widget('zii.widgets.CMenu',array(
                         'items'=>array(
-                            array('label'=>'Lietotāji', 'url'=>array('/site/index')),
+                            array('label'=>'Lietotāji', 'url'=>array('/user/index')),
                             array('label'=>'Brīdinājumi', 'url'=>array('/site/page', 'view'=>'about')),
                             array('label'=>'Maksājumi', 'url'=>array('/site/contact')),
                             array('label'=>'Jaunumi', 'url'=>array('/news')),

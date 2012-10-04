@@ -3,16 +3,16 @@
 /* @var $model Users */
 
 $this->breadcrumbs=array(
-	'Users'=>array('index'),
-	'Create',
+	'Lietotāji'=>array('index'),
+	'Izveidot',
 );
 
 $this->menu=array(
-	array('label'=>'List Users', 'url'=>array('index')),
-	array('label'=>'Manage Users', 'url'=>array('admin')),
+	array('label'=>'Lietotāju saraksts', 'url'=>array('index')),
+	array('label'=>'Lietotāju rediģēšana', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Users</h1>
+<h1>Izveidot lietotāju</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

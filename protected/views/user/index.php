@@ -3,16 +3,16 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Users',
+	'Lietotāji',
 );
 
 $this->menu=array(
-	array('label'=>'Create Users', 'url'=>array('create')),
-	array('label'=>'Manage Users', 'url'=>array('admin')),
+	array('label'=>'Izveidot lietotāju', 'url'=>array('create')),
+	array('label'=>'Rediģēt lietotājus', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Users</h1>
+<h1>Lietotāji</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

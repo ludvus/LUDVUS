@@ -11,7 +11,7 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Lauki ir <span class="required">*</span> ir obligāti.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -35,13 +35,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'fakultates_id'); ?>
-		<?php echo $form->textField($model,'fakultates_id'); ?>
+		<?php echo $form->dropDownList($model,'fakultates_id', $fakultates, array('options' => array($model->fakultates_id=>array('selected'=>true)), 'disabled'=>'true')); ?>
 		<?php echo $form->error($model,'fakultates_id'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'kurss'); ?>
-		<?php echo $form->textField($model,'kurss'); ?>
+		<?php echo $form->textField($model,'kurss', array('readonly'=>'true')); ?>
 		<?php echo $form->error($model,'kurss'); ?>
 	</div>
 
