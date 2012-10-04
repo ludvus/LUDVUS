@@ -4,6 +4,8 @@ class NewsController extends Controller
 {
 	public function actionIndex()
 	{
+		$this->allowUser(2);
+
 		$criteria = new CDbCriteria;
 		$criteria->order = '`ts` DESC';
 
@@ -13,11 +15,14 @@ class NewsController extends Controller
 
 	public function actionEdit($id)
 	{
+		$this->allowUser(2);
+
 		$model = Jaunumi::model()->findByAttributes(array('id'=>$id));
 		
 		if (isset($_POST['Jaunumi']))
 		{
 			$model->attributes=$_POST['Jaunumi'];
+			$model->ts = date('Y-m-d H:i:s', strtotime('+1 hour'));
 			if($model->save())
 				$this->redirect(array('index'));
 		}
@@ -27,6 +32,8 @@ class NewsController extends Controller
 
 	public function actionAdd()
 	{
+		$this->allowUser(2);
+		
 		$model = new Jaunumi;
 
 		if (isset($_POST['Jaunumi']))

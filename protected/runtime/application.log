@@ -904,3 +904,100 @@ in C:\xampp\htdocs\index.php (13)
 2012/10/04 11:49:22 [warning] [application] Failed to set unsafe attribute "ts" of "Jaunumi".
 in C:\xampp\htdocs\protected\controllers\NewsController.php (34)
 in C:\xampp\htdocs\index.php (13)
+2012/10/04 12:36:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user".' in C:\xampp\htdocs\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('user')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=user
+---
+2012/10/04 13:01:26 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Jums nav tiesību apmeklēt šo lapu' in C:\xampp\htdocs\protected\components\Controller.php:27
+Stack trace:
+#0 C:\xampp\htdocs\protected\controllers\NewsController.php(7): Controller->allowUser(2)
+#1 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): NewsController->actionIndex()
+#2 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('')
+#6 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('news')
+#7 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=news
+---
+2012/10/04 13:02:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user".' in C:\xampp\htdocs\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('user')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=user
+---
+2012/10/04 13:02:37 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.user_type" is not defined.' in C:\xampp\htdocs\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\auth\CWebUser.php(141): CComponent->__get('user_type')
+#1 C:\xampp\htdocs\protected\controllers\SiteController.php(57): CWebUser->__get('user_type')
+#2 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionProfile()
+#3 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('profile')
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('site/profile')
+#8 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/profile
+---
+2012/10/04 13:02:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user".' in C:\xampp\htdocs\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('user')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=user
+---
+2012/10/04 13:06:23 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.user_type" is not defined.' in C:\xampp\htdocs\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\auth\CWebUser.php(141): CComponent->__get('user_type')
+#1 C:\xampp\htdocs\protected\controllers\SiteController.php(74): CWebUser->__get('user_type')
+#2 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionProfile()
+#3 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('profile')
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('site/profile')
+#8 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/profile
+---
+2012/10/04 13:06:44 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.user_type" is not defined.' in C:\xampp\htdocs\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\auth\CWebUser.php(141): CComponent->__get('user_type')
+#1 C:\xampp\htdocs\protected\controllers\SiteController.php(74): CWebUser->__get('user_type')
+#2 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionProfile()
+#3 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('profile')
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('site/profile')
+#8 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/profile
+---
+2012/10/04 13:09:20 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Jums nav tiesību apmeklēt šo lapu' in C:\xampp\htdocs\protected\components\Controller.php:27
+Stack trace:
+#0 C:\xampp\htdocs\protected\controllers\SiteController.php(57): Controller->allowUser(1)
+#1 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionProfile()
+#2 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('profile')
+#6 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('site/profile')
+#7 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=site/profile
+---

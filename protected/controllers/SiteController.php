@@ -54,6 +54,8 @@ class SiteController extends Controller
 	*/
 	public function actionProfile()
 	{
+		$this->allowUser(1);
+		
 		switch (Yii::app()->user->user_type)
 		{
 			case 1:

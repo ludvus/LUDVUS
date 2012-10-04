@@ -20,4 +20,12 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+
+	public function allowUser($min_level)
+	{
+		if (Yii::app()->user->isGuest)
+			throw new CHttpException(403, 'Jums nav tiesību apmeklēt šo lapu');
+		if (Yii::app()->user->user_type < $min_level)
+			throw new CHttpException(403, 'Jums nav tiesību apmeklēt šo lapu');
+	}
 }
