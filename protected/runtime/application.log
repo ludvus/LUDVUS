@@ -1,0 +1,395 @@
+2012/10/03 12:12:04 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.Lietotājvārds" is not defined.' in /var/ludvus/yii/base/CComponent.php:131
+Stack trace:
+#0 /var/ludvus/yii/web/helpers/CHtml.php(2158): CComponent->__get('Lietot??jv??rds')
+#1 /var/ludvus/yii/web/helpers/CHtml.php(1887): CHtml::resolveValue(Object(LoginForm), 'Lietot??jv??rds')
+#2 /var/ludvus/yii/web/helpers/CHtml.php(1217): CHtml::activeInputField('text', Object(LoginForm), 'Lietot??jv??rds', Array)
+#3 /var/ludvus/yii/web/widgets/CActiveForm.php(658): CHtml::activeTextField(Object(LoginForm), 'Lietot??jv??rds', Array)
+#4 /var/ludvus/protected/views/site/login.php(23): CActiveForm->textField(Object(LoginForm), 'Lietot??jv??rds')
+#5 /var/ludvus/yii/web/CBaseController.php(127): require('/var/ludvus/pro...')
+#6 /var/ludvus/yii/web/CBaseController.php(96): CBaseController->renderInternal('/var/ludvus/pro...', Array, true)
+#7 /var/ludvus/yii/web/CController.php(870): CBaseController->renderFile('/var/ludvus/pro...', Array, true)
+#8 /var/ludvus/yii/web/CController.php(783): CController->renderPartial('login', Array, true)
+#9 /var/ludvus/protected/controllers/SiteController.php(98): CController->render('login', Array)
+#10 /var/ludvus/yii/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#11 /var/ludvus/yii/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/ludvus/yii/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#13 /var/ludvus/yii/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
+#15 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#16 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/ludvus/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=site/login
+HTTP_REFERER=http://ludvus.local/index.php?r=site/contact
+---
+2012/10/03 12:12:05 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.Lietotājvārds" is not defined.' in /var/ludvus/yii/base/CComponent.php:131
+Stack trace:
+#0 /var/ludvus/yii/web/helpers/CHtml.php(2158): CComponent->__get('Lietot??jv??rds')
+#1 /var/ludvus/yii/web/helpers/CHtml.php(1887): CHtml::resolveValue(Object(LoginForm), 'Lietot??jv??rds')
+#2 /var/ludvus/yii/web/helpers/CHtml.php(1217): CHtml::activeInputField('text', Object(LoginForm), 'Lietot??jv??rds', Array)
+#3 /var/ludvus/yii/web/widgets/CActiveForm.php(658): CHtml::activeTextField(Object(LoginForm), 'Lietot??jv??rds', Array)
+#4 /var/ludvus/protected/views/site/login.php(23): CActiveForm->textField(Object(LoginForm), 'Lietot??jv??rds')
+#5 /var/ludvus/yii/web/CBaseController.php(127): require('/var/ludvus/pro...')
+#6 /var/ludvus/yii/web/CBaseController.php(96): CBaseController->renderInternal('/var/ludvus/pro...', Array, true)
+#7 /var/ludvus/yii/web/CController.php(870): CBaseController->renderFile('/var/ludvus/pro...', Array, true)
+#8 /var/ludvus/yii/web/CController.php(783): CController->renderPartial('login', Array, true)
+#9 /var/ludvus/protected/controllers/SiteController.php(98): CController->render('login', Array)
+#10 /var/ludvus/yii/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#11 /var/ludvus/yii/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/ludvus/yii/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#13 /var/ludvus/yii/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
+#15 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#16 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/ludvus/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=site/login
+HTTP_REFERER=http://ludvus.local/index.php?r=site/login
+---
+2012/10/03 12:18:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/r".' in /var/ludvus/yii/web/CWebApplication.php:287
+Stack trace:
+#0 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('users/r')
+#1 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/ludvus/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=users/r
+---
+2012/10/03 12:18:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/r".' in /var/ludvus/yii/web/CWebApplication.php:287
+Stack trace:
+#0 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('users/r')
+#1 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/ludvus/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=users/r
+HTTP_REFERER=http://ludvus.local/index.php?r=users/r
+---
+2012/10/03 12:18:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users".' in /var/ludvus/yii/web/CWebApplication.php:287
+Stack trace:
+#0 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('users')
+#1 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/ludvus/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=users
+---
+2012/10/03 12:18:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users".' in /var/ludvus/yii/web/CWebApplication.php:287
+Stack trace:
+#0 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('users')
+#1 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/ludvus/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=users
+HTTP_REFERER=http://ludvus.local/index.php?r=users
+---
+2012/10/03 12:19:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "register".' in /var/ludvus/yii/web/CController.php:484
+Stack trace:
+#0 /var/ludvus/yii/web/CController.php(271): CController->missingAction('register')
+#1 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('register')
+#2 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('site/register')
+#3 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/ludvus/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/register
+---
+2012/10/03 12:19:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "register".' in /var/ludvus/yii/web/CController.php:484
+Stack trace:
+#0 /var/ludvus/yii/web/CController.php(271): CController->missingAction('register')
+#1 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('register')
+#2 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('site/register')
+#3 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/ludvus/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/register
+HTTP_REFERER=http://ludvus.local/index.php?r=site/register
+---
+2012/10/03 12:20:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in /var/ludvus/yii/web/CWebApplication.php:287
+Stack trace:
+#0 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('gii')
+#1 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/ludvus/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=gii
+---
+2012/10/03 12:20:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in /var/ludvus/yii/web/CWebApplication.php:287
+Stack trace:
+#0 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('gii')
+#1 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/ludvus/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=gii
+HTTP_REFERER=http://ludvus.local/index.php?r=gii
+---
+2012/10/03 12:35:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users".' in /var/ludvus/yii/web/CWebApplication.php:287
+Stack trace:
+#0 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('users')
+#1 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/ludvus/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=users
+---
+2012/10/03 12:35:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users".' in /var/ludvus/yii/web/CWebApplication.php:287
+Stack trace:
+#0 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('users')
+#1 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/ludvus/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=users
+HTTP_REFERER=http://ludvus.local/index.php?r=users
+---
+2012/10/03 12:52:20 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.pass" is not defined.' in /var/ludvus/yii/base/CComponent.php:174
+Stack trace:
+#0 /var/ludvus/protected/controllers/SiteController.php(93): CComponent->__set('pass', 'da39a3ee5e6b4b0...')
+#1 /var/ludvus/yii/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#2 /var/ludvus/yii/web/CController.php(309): CInlineAction->runWithParams(Array)
+#3 /var/ludvus/yii/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#4 /var/ludvus/yii/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
+#6 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#7 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#8 /var/ludvus/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=site/login
+HTTP_REFERER=http://ludvus.local/index.php?r=site/login
+---
+2012/10/03 13:01:40 [warning] [application] Failed to set unsafe attribute "username" of "LoginForm".
+in /var/ludvus/protected/controllers/SiteController.php (92)
+in /var/ludvus/index.php (13)
+2012/10/03 13:01:40 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.username" is not defined.' in /var/ludvus/yii/base/CComponent.php:131
+Stack trace:
+#0 /var/ludvus/yii/web/helpers/CHtml.php(2158): CComponent->__get('username')
+#1 /var/ludvus/yii/web/helpers/CHtml.php(1887): CHtml::resolveValue(Object(LoginForm), 'username')
+#2 /var/ludvus/yii/web/helpers/CHtml.php(1217): CHtml::activeInputField('text', Object(LoginForm), 'username', Array)
+#3 /var/ludvus/yii/web/widgets/CActiveForm.php(658): CHtml::activeTextField(Object(LoginForm), 'username', Array)
+#4 /var/ludvus/protected/views/site/login.php(23): CActiveForm->textField(Object(LoginForm), 'username')
+#5 /var/ludvus/yii/web/CBaseController.php(127): require('/var/ludvus/pro...')
+#6 /var/ludvus/yii/web/CBaseController.php(96): CBaseController->renderInternal('/var/ludvus/pro...', Array, true)
+#7 /var/ludvus/yii/web/CController.php(870): CBaseController->renderFile('/var/ludvus/pro...', Array, true)
+#8 /var/ludvus/yii/web/CController.php(783): CController->renderPartial('login', Array, true)
+#9 /var/ludvus/protected/controllers/SiteController.php(99): CController->render('login', Array)
+#10 /var/ludvus/yii/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#11 /var/ludvus/yii/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/ludvus/yii/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#13 /var/ludvus/yii/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
+#15 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#16 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/ludvus/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=site/login
+HTTP_REFERER=http://ludvus.local/index.php?r=site/login
+---
+2012/10/03 13:01:41 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.username" is not defined.' in /var/ludvus/yii/base/CComponent.php:131
+Stack trace:
+#0 /var/ludvus/yii/web/helpers/CHtml.php(2158): CComponent->__get('username')
+#1 /var/ludvus/yii/web/helpers/CHtml.php(1887): CHtml::resolveValue(Object(LoginForm), 'username')
+#2 /var/ludvus/yii/web/helpers/CHtml.php(1217): CHtml::activeInputField('text', Object(LoginForm), 'username', Array)
+#3 /var/ludvus/yii/web/widgets/CActiveForm.php(658): CHtml::activeTextField(Object(LoginForm), 'username', Array)
+#4 /var/ludvus/protected/views/site/login.php(23): CActiveForm->textField(Object(LoginForm), 'username')
+#5 /var/ludvus/yii/web/CBaseController.php(127): require('/var/ludvus/pro...')
+#6 /var/ludvus/yii/web/CBaseController.php(96): CBaseController->renderInternal('/var/ludvus/pro...', Array, true)
+#7 /var/ludvus/yii/web/CController.php(870): CBaseController->renderFile('/var/ludvus/pro...', Array, true)
+#8 /var/ludvus/yii/web/CController.php(783): CController->renderPartial('login', Array, true)
+#9 /var/ludvus/protected/controllers/SiteController.php(99): CController->render('login', Array)
+#10 /var/ludvus/yii/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#11 /var/ludvus/yii/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/ludvus/yii/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#13 /var/ludvus/yii/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
+#15 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#16 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/ludvus/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=site/login
+HTTP_REFERER=http://ludvus.local/index.php?r=site/login
+---
+2012/10/03 13:02:59 [warning] [application] Failed to set unsafe attribute "username" of "LoginForm".
+in /var/ludvus/protected/controllers/SiteController.php (92)
+in /var/ludvus/index.php (13)
+2012/10/03 13:02:59 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.username" is not defined.' in /var/ludvus/yii/base/CComponent.php:131
+Stack trace:
+#0 /var/ludvus/yii/web/helpers/CHtml.php(2158): CComponent->__get('username')
+#1 /var/ludvus/yii/web/helpers/CHtml.php(1887): CHtml::resolveValue(Object(LoginForm), 'username')
+#2 /var/ludvus/yii/web/helpers/CHtml.php(1217): CHtml::activeInputField('text', Object(LoginForm), 'username', Array)
+#3 /var/ludvus/yii/web/widgets/CActiveForm.php(658): CHtml::activeTextField(Object(LoginForm), 'username', Array)
+#4 /var/ludvus/protected/views/site/login.php(23): CActiveForm->textField(Object(LoginForm), 'username')
+#5 /var/ludvus/yii/web/CBaseController.php(127): require('/var/ludvus/pro...')
+#6 /var/ludvus/yii/web/CBaseController.php(96): CBaseController->renderInternal('/var/ludvus/pro...', Array, true)
+#7 /var/ludvus/yii/web/CController.php(870): CBaseController->renderFile('/var/ludvus/pro...', Array, true)
+#8 /var/ludvus/yii/web/CController.php(783): CController->renderPartial('login', Array, true)
+#9 /var/ludvus/protected/controllers/SiteController.php(99): CController->render('login', Array)
+#10 /var/ludvus/yii/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#11 /var/ludvus/yii/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/ludvus/yii/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#13 /var/ludvus/yii/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
+#15 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#16 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/ludvus/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=site/login
+HTTP_REFERER=http://ludvus.local/index.php?r=site/login
+---
+2012/10/03 13:03:00 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.username" is not defined.' in /var/ludvus/yii/base/CComponent.php:131
+Stack trace:
+#0 /var/ludvus/yii/web/helpers/CHtml.php(2158): CComponent->__get('username')
+#1 /var/ludvus/yii/web/helpers/CHtml.php(1887): CHtml::resolveValue(Object(LoginForm), 'username')
+#2 /var/ludvus/yii/web/helpers/CHtml.php(1217): CHtml::activeInputField('text', Object(LoginForm), 'username', Array)
+#3 /var/ludvus/yii/web/widgets/CActiveForm.php(658): CHtml::activeTextField(Object(LoginForm), 'username', Array)
+#4 /var/ludvus/protected/views/site/login.php(23): CActiveForm->textField(Object(LoginForm), 'username')
+#5 /var/ludvus/yii/web/CBaseController.php(127): require('/var/ludvus/pro...')
+#6 /var/ludvus/yii/web/CBaseController.php(96): CBaseController->renderInternal('/var/ludvus/pro...', Array, true)
+#7 /var/ludvus/yii/web/CController.php(870): CBaseController->renderFile('/var/ludvus/pro...', Array, true)
+#8 /var/ludvus/yii/web/CController.php(783): CController->renderPartial('login', Array, true)
+#9 /var/ludvus/protected/controllers/SiteController.php(99): CController->render('login', Array)
+#10 /var/ludvus/yii/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#11 /var/ludvus/yii/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/ludvus/yii/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#13 /var/ludvus/yii/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
+#15 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#16 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/ludvus/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=site/login
+HTTP_REFERER=http://ludvus.local/index.php?r=site/login
+---
+2012/10/03 13:19:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[42000] [1044] Access denied for user 'ludvus'@'localhost' to database 'ludvs'' in /var/ludvus/yii/db/CDbConnection.php:382
+Stack trace:
+#0 /var/ludvus/yii/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/ludvus/yii/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/ludvus/yii/base/CModule.php(388): CDbConnection->init()
+#3 /var/ludvus/yii/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/ludvus/yii/db/ar/CActiveRecord.php(624): CApplication->getDb()
+#5 /var/ludvus/yii/db/ar/CActiveRecord.php(2311): CActiveRecord->getDbConnection()
+#6 /var/ludvus/yii/db/ar/CActiveRecord.php(388): CActiveRecordMetaData->__construct(Object(Users))
+#7 /var/ludvus/yii/web/CActiveDataProvider.php(75): CActiveRecord::model('Users')
+#8 /var/ludvus/protected/controllers/UserController.php(126): CActiveDataProvider->__construct('Users')
+#9 /var/ludvus/yii/web/actions/CInlineAction.php(50): UserController->actionIndex()
+#10 /var/ludvus/yii/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/ludvus/yii/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/ludvus/yii/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/ludvus/yii/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/ludvus/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/ludvus/yii/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/ludvus/yii/web/CController.php(292): CFilterChain->run()
+#17 /var/ludvus/yii/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('')
+#19 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('user')
+#20 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/ludvus/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user
+---
+2012/10/03 13:19:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[42000] [1044] Access denied for user 'ludvus'@'localhost' to database 'ludvs'' in /var/ludvus/yii/db/CDbConnection.php:382
+Stack trace:
+#0 /var/ludvus/yii/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/ludvus/yii/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/ludvus/yii/base/CModule.php(388): CDbConnection->init()
+#3 /var/ludvus/yii/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/ludvus/yii/db/ar/CActiveRecord.php(624): CApplication->getDb()
+#5 /var/ludvus/yii/db/ar/CActiveRecord.php(2311): CActiveRecord->getDbConnection()
+#6 /var/ludvus/yii/db/ar/CActiveRecord.php(388): CActiveRecordMetaData->__construct(Object(Users))
+#7 /var/ludvus/yii/web/CActiveDataProvider.php(75): CActiveRecord::model('Users')
+#8 /var/ludvus/protected/controllers/UserController.php(126): CActiveDataProvider->__construct('Users')
+#9 /var/ludvus/yii/web/actions/CInlineAction.php(50): UserController->actionIndex()
+#10 /var/ludvus/yii/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /var/ludvus/yii/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /var/ludvus/yii/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/ludvus/yii/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /var/ludvus/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/ludvus/yii/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/ludvus/yii/web/CController.php(292): CFilterChain->run()
+#17 /var/ludvus/yii/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('')
+#19 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('user')
+#20 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/ludvus/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user
+HTTP_REFERER=http://ludvus.local/index.php?r=user
+---
+2012/10/03 13:21:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /var/ludvus/yii/web/CController.php:484
+Stack trace:
+#0 /var/ludvus/yii/web/CController.php(271): CController->missingAction('login')
+#1 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
+#2 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('user/login')
+#3 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/ludvus/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/login
+---
+2012/10/03 13:21:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /var/ludvus/yii/web/CController.php:484
+Stack trace:
+#0 /var/ludvus/yii/web/CController.php(271): CController->missingAction('login')
+#1 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
+#2 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('user/login')
+#3 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/ludvus/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/login
+HTTP_REFERER=http://ludvus.local/index.php?r=user/login
+---
+2012/10/03 13:23:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /var/ludvus/yii/web/CController.php:484
+Stack trace:
+#0 /var/ludvus/yii/web/CController.php(271): CController->missingAction('login')
+#1 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
+#2 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('user/login')
+#3 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/ludvus/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/login
+---
+2012/10/03 13:24:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /var/ludvus/yii/web/CController.php:484
+Stack trace:
+#0 /var/ludvus/yii/web/CController.php(271): CController->missingAction('login')
+#1 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
+#2 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('user/login')
+#3 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/ludvus/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/login
+HTTP_REFERER=http://ludvus.local/index.php?r=user/login
+---
+2012/10/03 13:24:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /var/ludvus/yii/web/CController.php:484
+Stack trace:
+#0 /var/ludvus/yii/web/CController.php(271): CController->missingAction('login')
+#1 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
+#2 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('user/login')
+#3 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/ludvus/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/login
+HTTP_REFERER=http://ludvus.local/index.php?r=user/login
+---
+2012/10/03 13:24:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /var/ludvus/yii/web/CController.php:484
+Stack trace:
+#0 /var/ludvus/yii/web/CController.php(271): CController->missingAction('login')
+#1 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
+#2 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('user/login')
+#3 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/ludvus/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/login
+HTTP_REFERER=http://ludvus.local/index.php?r=user/login
+---
+2012/10/03 13:24:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /var/ludvus/yii/web/CController.php:484
+Stack trace:
+#0 /var/ludvus/yii/web/CController.php(271): CController->missingAction('login')
+#1 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
+#2 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('user/login')
+#3 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/ludvus/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/login
+HTTP_REFERER=http://ludvus.local/index.php?r=user/login
+---
+2012/10/03 13:24:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /var/ludvus/yii/web/CController.php:484
+Stack trace:
+#0 /var/ludvus/yii/web/CController.php(271): CController->missingAction('login')
+#1 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
+#2 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('user/login')
+#3 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/ludvus/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/login
+HTTP_REFERER=http://ludvus.local/index.php?r=user/login
+---

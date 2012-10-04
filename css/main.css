@@ -1,0 +1,304 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	color: #555;
+	font: 13px/1.231 arial,helvetica,clean,sans-serif;
+        font-family: "Droid Sans",Tahoma,Arial,Helvetica,sans-serif;
+        background-color: #ddd;
+}
+
+#page
+{
+	margin-top: 5px;
+	margin-bottom: 5px;
+        width: 1150px;
+}
+
+#header
+{
+	margin: 0;
+	padding: 0;
+        height: 100px;
+        background-image: url('../images/blue_header.png');
+        background-repeat: repeat-x;
+        border-radius: 10px;
+        color: white;
+}
+
+#title
+{
+    font-size: 1.6em;
+}
+
+#login
+{
+    text-align: right;
+}
+
+#login_form
+{
+    background-color: #0F5796;
+    border-bottom: 1px solid #489CD4;
+    border-top: 1px solid #489CD4;
+    border-radius: 10px 10px 10px 10px;
+    width: 270px;
+    min-width: 200px;
+    max-width: 300px;
+    margin: 5px 10px;
+    padding: 10px;
+    margin-left: auto;
+}
+
+#login_info
+{
+    margin-bottom: 3px;
+}
+
+#header_submenu a
+{
+    text-decoration: none;
+    color: white;
+    text-shadow: 0 1px 0 #151515;
+}
+
+#content
+{
+    padding: 20px;
+}
+
+#sidebar
+{
+	padding: 20px 20px 20px 0;
+}
+
+#footer
+{
+    font-size: 0.8em;
+    text-align: center;
+    border-top: 1px solid #C9E0ED;
+    background-color: #fff;
+    border-radius: 7px;
+    width: 1150px;
+    padding: 10px 0px;
+}
+
+#logo
+{
+	padding: 10px 20px;
+	font-size: 220px;
+}
+
+.mainmenu
+{
+    background:white url(bg.gif) repeat-x left top;
+    width: 180px;
+    float: left;
+    border-radius: 7px;
+    margin-top: 5px;
+}
+
+.menu
+{
+    background-color: white;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.menu a
+{
+    color: #0066A4;
+    background-color: white;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:bold;
+    text-decoration:none;
+    padding:5px 8px;
+}
+
+.menu a:hover
+{
+    text-decoration: underline;
+}
+
+.menu_header
+{
+    background-color: #0F508D;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    color: white;
+    text-align: center;
+    font-size: 10pt;
+    font-weight: bold;
+    padding: 5px 0px;
+}
+
+#main_content
+{
+    width: 780px;
+    float: left;
+    border-radius: 7px;
+    background-color: #fff;
+    margin: 5px;
+}
+
+.mainmenu ul
+{
+	padding:6px 20px 5px 20px;
+	margin:0px;
+}
+
+.mainmenu ul li
+{
+    display: block;
+    padding: 5px 8px;
+}
+
+div.flash-error, div.flash-notice, div.flash-success
+{
+	padding:.8em;
+	margin-bottom:1em;
+	border:2px solid #ddd;
+}
+
+div.flash-error
+{
+	background:#FBE3E4;
+	color:#8a1f11;
+	border-color:#FBC2C4;
+}
+
+div.flash-notice
+{
+	background:#FFF6BF;
+	color:#514721;
+	border-color:#FFD324;
+}
+
+div.flash-success
+{
+	background:#E6EFC2;
+	color:#264409;
+	border-color:#C6D880;
+}
+
+div.flash-error a
+{
+	color:#8a1f11;
+}
+
+div.flash-notice a
+{
+	color:#514721;
+}
+
+div.flash-success a
+{
+	color:#264409;
+}
+
+div.form .rememberMe label
+{
+	display: inline;
+}
+
+div.view
+{
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #C9E0ED;
+}
+
+div.breadcrumbs
+{
+	font-size: 0.9em;
+	padding: 10px 20px;
+        font-weight: bold;
+}
+
+div.breadcrumbs span
+{
+	font-weight: bold;
+}
+
+div.search-form
+{
+	padding: 10px;
+	margin: 10px 0;
+	background: #eee;
+}
+
+.portlet
+{
+
+}
+
+.portlet-decoration
+{
+	padding: 3px 8px;
+	background: #B7D6E7;
+	border-left: 5px solid #6FACCF;
+}
+
+.portlet-title
+{
+	font-size: 12px;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	color: #298dcd;
+}
+
+.portlet-content
+{
+	font-size:0.9em;
+	margin: 0 0 15px 0;
+	padding: 5px 8px;
+	background:#EFFDFF;
+}
+
+.portlet-content ul
+{
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+}
+
+.portlet-content li
+{
+	padding: 2px 0 4px 0px;
+}
+
+.operations
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.operations li
+{
+	padding-bottom: 2px;
+}
+
+.operations li a
+{
+	font: bold 12px Arial;
+	color: #0066A4;
+	display: block;
+	padding: 2px 0 2px 8px;
+	line-height: 15px;
+	text-decoration: none;
+}
+
+.operations li a:visited
+{
+	color: #0066A4;
+}
+
+.operations li a:hover
+{
+	background: #80CFFF;
+}
