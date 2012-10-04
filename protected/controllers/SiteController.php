@@ -27,9 +27,12 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		$criteria = new CDbCriteria;
+		$criteria->limit = 10;
+		$criteria->order = '`ts` DESC';
+
+		$news = Jaunumi::model()->findAll($criteria);
+		$this->render('index', array('news'=>$news));
 	}
 
 	/**
@@ -44,6 +47,49 @@ class SiteController extends Controller
 			else
 				$this->render('error', $error);
 		}
+	}
+
+	/**
+	* Displays logged in user profile
+	*/
+	public function actionProfile()
+	{
+		switch (Yii::app()->user->user_type)
+		{
+			case 1:
+				$data = Iemitnieki::model()->findByAttributes(array('id'=>Yii::app()->user->user_id));
+				$render = 'iemitnieki_form';
+				break;
+			case 2:
+				$data = Komandanti::model()->findByAttributes(array('id'=>Yii::app()->user->user_id));
+				$render = 'komandanti_form';
+				break;
+			case 3:
+				$data = Administratori::model()->findByAttributes(array('id'=>Yii::app()->user->user_id));
+				$render = 'administratori_form';
+				break;
+		}
+
+		if (isset($_POST['Iemitnieki']))
+		{
+			$data->attributes=$_POST['Iemitnieki'];
+			if($data->save())
+				$this->redirect(array('profile'));
+		}
+		elseif (isset($_POST['Komandanti']))
+		{
+			$data->attributes=$_POST['Komandanti'];
+			if ($data->save())
+				$this->redirect(array('profile'));
+		}
+		elseif (isset($_POST['Administratori']))
+		{
+			$data->attributes=$_POST['Administratori'];
+			if ($data->save())
+				$this->redirect(array('profile'));
+		}
+
+		$this->render($render, array('model'=>$data));
 	}
 
 	/**

@@ -328,68 +328,579 @@ Stack trace:
 REQUEST_URI=/index.php?r=user/login
 HTTP_REFERER=http://ludvus.local/index.php?r=user/login
 ---
-2012/10/03 13:23:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /var/ludvus/yii/web/CController.php:484
+2012/10/03 15:28:55 [error] [exception.CDbException] exception 'CDbException' with message 'The table "users" for active record class "Users" cannot be found in the database.' in C:\xampp\htdocs\yii\db\ar\CActiveRecord.php:2312
 Stack trace:
-#0 /var/ludvus/yii/web/CController.php(271): CController->missingAction('login')
-#1 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
-#2 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('user/login')
-#3 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
-#4 /var/ludvus/index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/index.php?r=user/login
+#0 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(388): CActiveRecordMetaData->__construct(Object(Users))
+#1 C:\xampp\htdocs\protected\models\Users.php(22): CActiveRecord::model('Users')
+#2 C:\xampp\htdocs\protected\components\UserIdentity.php(20): Users::model()
+#3 C:\xampp\htdocs\protected\models\LoginForm.php(66): UserIdentity->authenticate()
+#4 C:\xampp\htdocs\yii\validators\CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#5 C:\xampp\htdocs\yii\validators\CValidator.php(214): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\xampp\htdocs\yii\base\CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\xampp\htdocs\protected\controllers\SiteController.php(95): CModel->validate()
+#8 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#9 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('login')
+#13 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('site/login')
+#14 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=site/login
+HTTP_REFERER=http://localhost/index.php?r=site/login
 ---
-2012/10/03 13:24:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /var/ludvus/yii/web/CController.php:484
+2012/10/03 17:10:57 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.user_type" is not defined.' in C:\xampp\htdocs\yii\base\CComponent.php:131
 Stack trace:
-#0 /var/ludvus/yii/web/CController.php(271): CController->missingAction('login')
-#1 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
-#2 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('user/login')
-#3 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
-#4 /var/ludvus/index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/index.php?r=user/login
-HTTP_REFERER=http://ludvus.local/index.php?r=user/login
+#0 C:\xampp\htdocs\yii\web\auth\CWebUser.php(141): CComponent->__get('user_type')
+#1 C:\xampp\htdocs\protected\views\layouts\main.php(66): CWebUser->__get('user_type')
+#2 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\yii\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\yii\web\CBaseController.php(207): COutputProcessor->run()
+#8 C:\xampp\htdocs\yii\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\web\CController.php(785): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#15 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('')
+#19 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#20 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php
+HTTP_REFERER=http://localhost/index.php?r=site/login
 ---
-2012/10/03 13:24:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /var/ludvus/yii/web/CController.php:484
+2012/10/03 17:12:04 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\protected\views\layouts\main.php:66)
 Stack trace:
-#0 /var/ludvus/yii/web/CController.php(271): CController->missingAction('login')
-#1 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
-#2 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('user/login')
-#3 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
-#4 /var/ludvus/index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/index.php?r=user/login
-HTTP_REFERER=http://ludvus.local/index.php?r=user/login
----
-2012/10/03 13:24:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /var/ludvus/yii/web/CController.php:484
+#0 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(77): SiteController->renderFile()
+#1 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate()
+#2 C:\xampp\htdocs\yii\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput()
+#3 C:\xampp\htdocs\yii\web\CBaseController.php(207): CContentDecorator->run()
+#4 C:\xampp\htdocs\yii\web\CBaseController.php(301): SiteController->endWidget()
+#5 C:\xampp\htdocs\protected\views\layouts\column1.php(6): SiteController->endContent()
+#6 C:\xampp\htdocs\yii\web\CBaseController.php(127): require()
+#7 C:\xampp\htdocs\yii\web\CBaseController.php(96): SiteController->renderInternal()
+#8 C:\xampp\htdocs\yii\web\CController.php(785): SiteController->renderFile()
+#9 C:\xampp\htdocs\protected\controllers\SiteController.php(32): SiteController->render()
+#10 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#11 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\yii\web\CController.php(287): SiteController->runAction()
+#13 C:\xampp\htdocs\yii\web\CController.php(266): SiteController->runActionWithFilters()
+#14 C:\xampp\htdocs\yii\web\CWebApplication.php(283): SiteController->run()
+#15 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#16 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php
+in C:\xampp\htdocs\protected\views\layouts\main.php (66)
+in C:\xampp\htdocs\protected\views\layouts\column1.php (6)
+in C:\xampp\htdocs\protected\controllers\SiteController.php (32)
+2012/10/03 17:13:26 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.password" is not defined.' in C:\xampp\htdocs\yii\base\CComponent.php:131
 Stack trace:
-#0 /var/ludvus/yii/web/CController.php(271): CController->missingAction('login')
-#1 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
-#2 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('user/login')
-#3 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
-#4 /var/ludvus/index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/index.php?r=user/login
-HTTP_REFERER=http://ludvus.local/index.php?r=user/login
+#0 C:\xampp\htdocs\yii\web\auth\CWebUser.php(141): CComponent->__get('password')
+#1 C:\xampp\htdocs\protected\views\layouts\main.php(66): CWebUser->__get('password')
+#2 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\yii\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\yii\web\CBaseController.php(207): COutputProcessor->run()
+#8 C:\xampp\htdocs\yii\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\web\CController.php(785): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#15 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('')
+#19 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#20 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php
+HTTP_REFERER=http://localhost/index.php?r=site/login
 ---
-2012/10/03 13:24:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /var/ludvus/yii/web/CController.php:484
+2012/10/03 17:13:31 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.pass" is not defined.' in C:\xampp\htdocs\yii\base\CComponent.php:131
 Stack trace:
-#0 /var/ludvus/yii/web/CController.php(271): CController->missingAction('login')
-#1 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
-#2 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('user/login')
-#3 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
-#4 /var/ludvus/index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/index.php?r=user/login
-HTTP_REFERER=http://ludvus.local/index.php?r=user/login
+#0 C:\xampp\htdocs\yii\web\auth\CWebUser.php(141): CComponent->__get('pass')
+#1 C:\xampp\htdocs\protected\views\layouts\main.php(66): CWebUser->__get('pass')
+#2 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\yii\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\yii\web\CBaseController.php(207): COutputProcessor->run()
+#8 C:\xampp\htdocs\yii\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\web\CController.php(785): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#15 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('')
+#19 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#20 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php
+HTTP_REFERER=http://localhost/index.php?r=site/login
 ---
-2012/10/03 13:24:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in /var/ludvus/yii/web/CController.php:484
+2012/10/03 17:19:00 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.pass" is not defined.' in C:\xampp\htdocs\yii\base\CComponent.php:131
 Stack trace:
-#0 /var/ludvus/yii/web/CController.php(271): CController->missingAction('login')
-#1 /var/ludvus/yii/web/CWebApplication.php(283): CController->run('login')
-#2 /var/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController('user/login')
-#3 /var/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
-#4 /var/ludvus/index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/index.php?r=user/login
-HTTP_REFERER=http://ludvus.local/index.php?r=user/login
+#0 C:\xampp\htdocs\yii\web\auth\CWebUser.php(141): CComponent->__get('pass')
+#1 C:\xampp\htdocs\protected\views\layouts\main.php(66): CWebUser->__get('pass')
+#2 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\yii\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\yii\web\CBaseController.php(207): COutputProcessor->run()
+#8 C:\xampp\htdocs\yii\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\web\CController.php(785): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#15 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('')
+#19 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#20 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php
+HTTP_REFERER=http://localhost/index.php?r=site/login
 ---
+2012/10/03 17:27:00 [error] [exception.CException] exception 'CException' with message 'CWebUser and its behaviors do not have a method or closure named "getUserData".' in C:\xampp\htdocs\yii\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\protected\views\layouts\main.php(66): CComponent->__call('getUserData', Array)
+#1 C:\xampp\htdocs\protected\views\layouts\main.php(66): CWebUser->getUserData()
+#2 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\yii\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\yii\web\CBaseController.php(207): COutputProcessor->run()
+#8 C:\xampp\htdocs\yii\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\web\CController.php(785): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#15 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('')
+#19 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#20 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php
+HTTP_REFERER=http://localhost/index.php?r=site/login
+---
+2012/10/03 17:28:33 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.user_type" is not defined.' in C:\xampp\htdocs\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\auth\CWebUser.php(141): CComponent->__get('user_type')
+#1 C:\xampp\htdocs\protected\views\layouts\main.php(66): CWebUser->__get('user_type')
+#2 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\yii\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\yii\web\CBaseController.php(207): COutputProcessor->run()
+#8 C:\xampp\htdocs\yii\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\web\CController.php(785): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#15 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('')
+#19 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#20 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php
+HTTP_REFERER=http://localhost/index.php?r=site/login
+---
+2012/10/03 17:29:32 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.user_type" is not defined.' in C:\xampp\htdocs\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\auth\CWebUser.php(141): CComponent->__get('user_type')
+#1 C:\xampp\htdocs\protected\views\layouts\main.php(66): CWebUser->__get('user_type')
+#2 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\yii\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\yii\web\CBaseController.php(207): COutputProcessor->run()
+#8 C:\xampp\htdocs\yii\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\web\CController.php(785): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#15 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('')
+#19 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#20 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/
+---
+2012/10/03 17:30:05 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.user_type" is not defined.' in C:\xampp\htdocs\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\auth\CWebUser.php(141): CComponent->__get('user_type')
+#1 C:\xampp\htdocs\protected\views\layouts\main.php(67): CWebUser->__get('user_type')
+#2 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\yii\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\yii\web\CBaseController.php(207): COutputProcessor->run()
+#8 C:\xampp\htdocs\yii\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\web\CController.php(785): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#15 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('')
+#19 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#20 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/
+---
+2012/10/03 17:30:07 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.user_type" is not defined.' in C:\xampp\htdocs\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\auth\CWebUser.php(141): CComponent->__get('user_type')
+#1 C:\xampp\htdocs\protected\views\layouts\main.php(67): CWebUser->__get('user_type')
+#2 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\yii\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\yii\web\CBaseController.php(207): COutputProcessor->run()
+#8 C:\xampp\htdocs\yii\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\web\CController.php(785): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#15 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('')
+#19 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#20 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/
+---
+2012/10/03 18:18:39 [error] [exception.CException] exception 'CException' with message 'Property "Jaunumi.title" is not defined.' in C:\xampp\htdocs\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(144): CComponent->__get('title')
+#1 C:\xampp\htdocs\yii\base\CModel.php(593): CActiveRecord->__get('title')
+#2 C:\xampp\htdocs\protected\views\site\index.php(13): CModel->offsetGet('title')
+#3 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii\web\CController.php(783): CController->renderPartial('index', Array, true)
+#7 C:\xampp\htdocs\protected\controllers\SiteController.php(31): CController->render('index', Array)
+#8 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#9 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('')
+#13 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#14 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php
+---
+2012/10/03 18:26:08 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('view')
+#9 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('user/view')
+#10 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=user/view
+HTTP_REFERER=http://localhost/index.php
+---
+2012/10/03 18:27:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\protected\controllers\UserController.php:156
+Stack trace:
+#0 C:\xampp\htdocs\protected\controllers\UserController.php(55): UserController->loadModel('komandants')
+#1 [internal function]: UserController->actionView('komandants')
+#2 C:\xampp\htdocs\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('view')
+#13 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('user/view')
+#14 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=user/view&id=komandants
+HTTP_REFERER=http://localhost/index.php?r=user/view&id=1
+---
+2012/10/03 18:28:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\protected\controllers\UserController.php:156
+Stack trace:
+#0 C:\xampp\htdocs\protected\controllers\UserController.php(55): UserController->loadModel('komandants')
+#1 [internal function]: UserController->actionView('komandants')
+#2 C:\xampp\htdocs\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('view')
+#13 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('user/view')
+#14 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=user/view&id=komandants
+HTTP_REFERER=http://localhost/index.php?r=user/view&id=1
+---
+2012/10/03 18:31:40 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('update')
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('user/update')
+#9 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/update&id=2
+HTTP_REFERER=http://localhost/index.php?r=user/view&id=2
+---
+2012/10/03 18:41:16 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('update')
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('user/update')
+#9 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/update&id=2
+HTTP_REFERER=http://localhost/index.php?r=user/view&id=2
+---
+2012/10/03 18:45:03 [error] [exception.CException] exception 'CException' with message 'Property "Users.vards" is not defined.' in C:\xampp\htdocs\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(144): CComponent->__get('vards')
+#1 C:\xampp\htdocs\yii\web\helpers\CHtml.php(2158): CActiveRecord->__get('vards')
+#2 C:\xampp\htdocs\yii\web\helpers\CHtml.php(1887): CHtml::resolveValue(Object(Users), 'vards')
+#3 C:\xampp\htdocs\yii\web\helpers\CHtml.php(1217): CHtml::activeInputField('text', Object(Users), 'vards', Array)
+#4 C:\xampp\htdocs\yii\web\widgets\CActiveForm.php(658): CHtml::activeTextField(Object(Users), 'vards', Array)
+#5 C:\xampp\htdocs\protected\views\user\iemitnieki.php(20): CActiveForm->textField(Object(Users), 'vards')
+#6 C:\xampp\htdocs\yii\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\yii\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\web\CController.php(783): CController->renderPartial('iemitnieki', Array, true)
+#10 C:\xampp\htdocs\protected\controllers\UserController.php(73): CController->render('iemitnieki', Array)
+#11 [internal function]: UserController->actionView('1')
+#12 C:\xampp\htdocs\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#13 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#14 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\web\CController.php(292): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('view')
+#23 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('user/view')
+#24 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user/view&id=1
+HTTP_REFERER=http://localhost/index.php
+---
+2012/10/03 18:55:17 [error] [exception.CException] exception 'CException' with message 'Property "Users.id" is not defined.' in C:\xampp\htdocs\yii\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(144): CComponent->__get('id')
+#1 C:\xampp\htdocs\protected\controllers\UserController.php(75): CActiveRecord->__get('id')
+#2 [internal function]: UserController->actionView('1')
+#3 C:\xampp\htdocs\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#4 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\web\CController.php(292): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('view')
+#14 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('user/view')
+#15 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/index.php?r=user/view&id=1
+HTTP_REFERER=http://localhost/index.php?r=user/view&id=1
+---
+2012/10/03 18:56:08 [error] [php] Undefined variable: render (C:\xampp\htdocs\protected\controllers\UserController.php:78)
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(134): UserController->runAction()
+#3 C:\xampp\htdocs\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\xampp\htdocs\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(59): UserController->filterAccessControl()
+#6 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#7 C:\xampp\htdocs\yii\web\CController.php(292): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\web\CController.php(266): UserController->runActionWithFilters()
+#9 C:\xampp\htdocs\yii\web\CWebApplication.php(283): UserController->run()
+#10 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#11 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/view&id=2
+in C:\xampp\htdocs\protected\controllers\UserController.php (78)
+in C:\xampp\htdocs\index.php (13)
+2012/10/03 20:27:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'ludvus'@'localhost' (using password: YES)' in C:\xampp\htdocs\yii\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\yii\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\yii\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\yii\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\yii\base\CApplication.php(431): CModule->getComponent('db')
+#4 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(624): CApplication->getDb()
+#5 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(2311): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(388): CActiveRecordMetaData->__construct(Object(Jaunumi))
+#7 C:\xampp\htdocs\protected\models\Jaunumi.php(22): CActiveRecord::model('Jaunumi')
+#8 C:\xampp\htdocs\protected\controllers\SiteController.php(34): Jaunumi::model()
+#9 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('')
+#14 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#15 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2012/10/03 20:30:13 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ludvus.jaunumi' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `jaunumi`.
+in C:\xampp\htdocs\protected\models\Jaunumi.php (22)
+in C:\xampp\htdocs\protected\controllers\SiteController.php (34)
+in C:\xampp\htdocs\index.php (13)
+2012/10/03 20:30:13 [error] [exception.CDbException] exception 'CDbException' with message 'The table "jaunumi" for active record class "Jaunumi" cannot be found in the database.' in C:\xampp\htdocs\yii\db\ar\CActiveRecord.php:2312
+Stack trace:
+#0 C:\xampp\htdocs\yii\db\ar\CActiveRecord.php(388): CActiveRecordMetaData->__construct(Object(Jaunumi))
+#1 C:\xampp\htdocs\protected\models\Jaunumi.php(22): CActiveRecord::model('Jaunumi')
+#2 C:\xampp\htdocs\protected\controllers\SiteController.php(34): Jaunumi::model()
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#4 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('')
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#9 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/
+---
+2012/10/04 08:57:52 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "administratori_form".' in C:\xampp\htdocs\yii\web\CController.php:879
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CController.php(783): CController->renderPartial('administratori_...', Array, true)
+#1 C:\xampp\htdocs\protected\controllers\SiteController.php(73): CController->render('administratori_...', Array)
+#2 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): SiteController->actionProfile()
+#3 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('profile')
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('site/profile')
+#8 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/profile
+---
+2012/10/04 11:12:05 [error] [php] Undefined variable: render (C:\xampp\htdocs\protected\controllers\UserController.php:78)
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(134): UserController->runAction()
+#3 C:\xampp\htdocs\yii\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\xampp\htdocs\yii\web\CController.php(1146): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\yii\web\filters\CInlineFilter.php(59): UserController->filterAccessControl()
+#6 C:\xampp\htdocs\yii\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#7 C:\xampp\htdocs\yii\web\CController.php(292): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\web\CController.php(266): UserController->runActionWithFilters()
+#9 C:\xampp\htdocs\yii\web\CWebApplication.php(283): UserController->run()
+#10 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#11 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/view&id=2
+in C:\xampp\htdocs\protected\controllers\UserController.php (78)
+in C:\xampp\htdocs\index.php (13)
+2012/10/04 11:39:13 [error] [php] Undefined index: Iemitnieki (C:\xampp\htdocs\protected\controllers\NewsController.php:20)
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\yii\web\CController.php(287): NewsController->runAction()
+#3 C:\xampp\htdocs\yii\web\CController.php(266): NewsController->runActionWithFilters()
+#4 C:\xampp\htdocs\yii\web\CWebApplication.php(283): NewsController->run()
+#5 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#6 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=news/edit&id=2
+in C:\xampp\htdocs\protected\controllers\NewsController.php (20)
+in C:\xampp\htdocs\index.php (13)
+2012/10/04 11:49:22 [warning] [application] Failed to set unsafe attribute "ts" of "Jaunumi".
+in C:\xampp\htdocs\protected\controllers\NewsController.php (34)
+in C:\xampp\htdocs\index.php (13)

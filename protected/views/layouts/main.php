@@ -25,12 +25,18 @@
 	<div id="header">
             <table id="h_table" width="100%">
                 <tr>
-                    <td id="logo"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/lu_logo.png" alt="LU Logo" /></td>
+                    <td id="logo">
+                        <?php echo CHtml::link('<img src="'.Yii::app()->request->baseUrl.'/images/lu_logo.png" alt="LU Logo" />', array('/site/index')); ?>
+                    </td>
                     <td id="title"><?php echo CHtml::encode(Yii::app()->name); ?></td>
                     <td id="login">
                         <form id="login_form" action="">
                             <div id="login_info">
+                                <?php if (Yii::app()->user->isGuest): ?>
                                 Jūs neesat pieslēdzies. (<?php echo CHtml::link('Pieslēgties', array('/site/login')); ?>)<br/>
+                                <?php else: ?>
+                                Labdien, <?php echo Yii::app()->user->name; ?>. (<?php echo CHtml::link('Atslēgties', array('/site/logout')); ?>)<br />
+                                <?php endif; ?>
                             </div>
                             <div id="language_select">
                                 <select name="lang">
@@ -55,16 +61,75 @@
                 Galvenā izvelne
             </div>
             <div class="menu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
+    		<?php $this->widget('zii.widgets.CMenu',array(
+    			'items'=>array(
+    				array('label'=>'Jaunumi', 'url'=>array('/site/index')),
+    				array('label'=>'Dienesta Viesnīcas', 'url'=>array('/site/page', 'view'=>'about')),
+    				array('label'=>'Pieteikties d.v.', 'url'=>array('/site/contact')),
+    			),
+    		)); ?>
             </div>
+            <?php if (!Yii::app()->user->isGuest): ?>
+                <?php switch (Yii::app()->user->user_type) {
+                    case 1:
+                    ?>
+                    <div class="menu_header">
+                        Lietotāja izvēlne
+                    </div>
+                    <div class="menu">
+                    <?php $this->widget('zii.widgets.CMenu',array(
+                        'items'=>array(
+                            array('label'=>'Maksājumi', 'url'=>array('/site/index')),
+                            array('label'=>'Mainīt d.v.', 'url'=>array('/site/page', 'view'=>'about')),
+                            array('label'=>'Izstāties no d.v.', 'url'=>array('/site/contact')),
+                            array('label'=>'Atslēgties ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'))
+                        ),
+                    )); ?>
+                    </div>
+                    <?php
+                    break;
+
+                    case 2:
+                    ?>
+                    <div class="menu_header">
+                        Komandanta izvēlne
+                    </div>
+                    <div class="menu">
+                    <?php $this->widget('zii.widgets.CMenu',array(
+                        'items'=>array(
+                            array('label'=>'Lietotāji', 'url'=>array('/site/index')),
+                            array('label'=>'Brīdinājumi', 'url'=>array('/site/page', 'view'=>'about')),
+                            array('label'=>'Maksājumi', 'url'=>array('/site/contact')),
+                            array('label'=>'Jaunumi', 'url'=>array('/news')),
+                            array('label'=>'Informācija', 'url'=>array('/site/contact')),
+                            array('label'=>'Atslēgties ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'))
+                        ),
+                    )); ?>
+                    </div>
+                    <?php
+                    break;
+
+                    case 3:
+                    ?>
+                    <div class="menu_header">
+                        Administrātora izvēlne
+                    </div>
+                    <div class="menu">
+                    <?php $this->widget('zii.widgets.CMenu',array(
+                        'items'=>array(
+                            array('label'=>'Lietotāji', 'url'=>array('/site/index')),
+                            array('label'=>'Brīdinājumi', 'url'=>array('/site/page', 'view'=>'about')),
+                            array('label'=>'Maksājumi', 'url'=>array('/site/contact')),
+                            array('label'=>'Jaunumi', 'url'=>array('/news')),
+                            array('label'=>'Informācija', 'url'=>array('/site/contact')),
+                            array('label'=>'Atslēgties ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'))
+                        ),
+                    )); ?>
+                    </div>
+                    <?php
+                    break;
+                } ?>
+            <?php endif; ?>
 	</div><!-- mainmenu -->
         <div id="main_content">
             <?php if(isset($this->breadcrumbs)):?>
@@ -77,18 +142,24 @@
         </div>
         <div class="mainmenu">
             <div class="menu_header">
-                Galvenā izvelne
+                Profila izvēlne
             </div>
             <div class="menu">
+                <?php if (!Yii::app()->user->isGuest): ?>
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Profila dati', 'url'=>array('/site/profile')),
+				array('label'=>'Ziņojumi', 'url'=>array('/site/page', 'view'=>'about')),
+				array('label'=>'Kontakti', 'url'=>array('/site/contact')),
 			),
 		)); ?>
+                <?php else: ?>
+        <?php $this->widget('zii.widgets.CMenu',array(
+            'items'=>array(
+                array('label'=>'Pieslēgties', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+            ),
+        )); ?>       
+                <?php endif; ?>
             </div>
 	</div><!-- mainmenu -->
 	<div class="clear"></div>
