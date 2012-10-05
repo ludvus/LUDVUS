@@ -1164,3 +1164,122 @@ Stack trace:
 REQUEST_URI=/index.php?r=user/admin
 HTTP_REFERER=http://localhost/index.php?r=user/view&id=1
 ---
+2012/10/05 15:23:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pieteikumi/view".' in C:\xampp\htdocs\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('pieteikumi/view')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=pieteikumi/view
+---
+2012/10/05 15:23:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pieteikumi/view".' in C:\xampp\htdocs\yii\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('pieteikumi/view')
+#1 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=pieteikumi/view
+HTTP_REFERER=http://localhost/index.php?r=pieteikumi/view
+---
+2012/10/05 15:23:41 [error] [php] Undefined variable: k (C:\xampp\htdocs\protected\views\pieteikums\view.php:18)
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CController.php(870): PieteikumsController->renderFile()
+#1 C:\xampp\htdocs\yii\web\CController.php(783): PieteikumsController->renderPartial()
+#2 C:\xampp\htdocs\protected\controllers\PieteikumsController.php(41): PieteikumsController->render()
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): PieteikumsController->actionView()
+#4 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\web\CController.php(287): PieteikumsController->runAction()
+#6 C:\xampp\htdocs\yii\web\CController.php(266): PieteikumsController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(283): PieteikumsController->run()
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=pieteikums/view
+in C:\xampp\htdocs\protected\views\pieteikums\view.php (18)
+in C:\xampp\htdocs\protected\controllers\PieteikumsController.php (41)
+in C:\xampp\htdocs\index.php (13)
+2012/10/05 15:23:42 [error] [php] Undefined variable: k (C:\xampp\htdocs\protected\views\pieteikums\view.php:18)
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CController.php(870): PieteikumsController->renderFile()
+#1 C:\xampp\htdocs\yii\web\CController.php(783): PieteikumsController->renderPartial()
+#2 C:\xampp\htdocs\protected\controllers\PieteikumsController.php(41): PieteikumsController->render()
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): PieteikumsController->actionView()
+#4 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\web\CController.php(287): PieteikumsController->runAction()
+#6 C:\xampp\htdocs\yii\web\CController.php(266): PieteikumsController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(283): PieteikumsController->run()
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=pieteikums/view
+in C:\xampp\htdocs\protected\views\pieteikums\view.php (18)
+in C:\xampp\htdocs\protected\controllers\PieteikumsController.php (41)
+in C:\xampp\htdocs\index.php (13)
+2012/10/05 15:23:50 [error] [php] Undefined variable: k (C:\xampp\htdocs\protected\views\pieteikums\view.php:18)
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CController.php(870): PieteikumsController->renderFile()
+#1 C:\xampp\htdocs\yii\web\CController.php(783): PieteikumsController->renderPartial()
+#2 C:\xampp\htdocs\protected\controllers\PieteikumsController.php(41): PieteikumsController->render()
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): PieteikumsController->actionView()
+#4 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\web\CController.php(287): PieteikumsController->runAction()
+#6 C:\xampp\htdocs\yii\web\CController.php(266): PieteikumsController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(283): PieteikumsController->run()
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=pieteikums/view
+in C:\xampp\htdocs\protected\views\pieteikums\view.php (18)
+in C:\xampp\htdocs\protected\controllers\PieteikumsController.php (41)
+in C:\xampp\htdocs\index.php (13)
+2012/10/05 15:23:51 [error] [php] Undefined variable: k (C:\xampp\htdocs\protected\views\pieteikums\view.php:18)
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CController.php(870): PieteikumsController->renderFile()
+#1 C:\xampp\htdocs\yii\web\CController.php(783): PieteikumsController->renderPartial()
+#2 C:\xampp\htdocs\protected\controllers\PieteikumsController.php(41): PieteikumsController->render()
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): PieteikumsController->actionView()
+#4 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\web\CController.php(287): PieteikumsController->runAction()
+#6 C:\xampp\htdocs\yii\web\CController.php(266): PieteikumsController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(283): PieteikumsController->run()
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=pieteikums/view
+in C:\xampp\htdocs\protected\views\pieteikums\view.php (18)
+in C:\xampp\htdocs\protected\controllers\PieteikumsController.php (41)
+in C:\xampp\htdocs\index.php (13)
+2012/10/05 15:23:56 [error] [php] Undefined variable: k (C:\xampp\htdocs\protected\views\pieteikums\view.php:18)
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CController.php(870): PieteikumsController->renderFile()
+#1 C:\xampp\htdocs\yii\web\CController.php(783): PieteikumsController->renderPartial()
+#2 C:\xampp\htdocs\protected\controllers\PieteikumsController.php(41): PieteikumsController->render()
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): PieteikumsController->actionView()
+#4 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\web\CController.php(287): PieteikumsController->runAction()
+#6 C:\xampp\htdocs\yii\web\CController.php(266): PieteikumsController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(283): PieteikumsController->run()
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=pieteikums/view
+in C:\xampp\htdocs\protected\views\pieteikums\view.php (18)
+in C:\xampp\htdocs\protected\controllers\PieteikumsController.php (41)
+in C:\xampp\htdocs\index.php (13)
+2012/10/05 15:23:57 [error] [php] Undefined variable: k (C:\xampp\htdocs\protected\views\pieteikums\view.php:18)
+Stack trace:
+#0 C:\xampp\htdocs\yii\web\CController.php(870): PieteikumsController->renderFile()
+#1 C:\xampp\htdocs\yii\web\CController.php(783): PieteikumsController->renderPartial()
+#2 C:\xampp\htdocs\protected\controllers\PieteikumsController.php(41): PieteikumsController->render()
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): PieteikumsController->actionView()
+#4 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\web\CController.php(287): PieteikumsController->runAction()
+#6 C:\xampp\htdocs\yii\web\CController.php(266): PieteikumsController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(283): PieteikumsController->run()
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=pieteikums/view
+in C:\xampp\htdocs\protected\views\pieteikums\view.php (18)
+in C:\xampp\htdocs\protected\controllers\PieteikumsController.php (41)
+in C:\xampp\htdocs\index.php (13)

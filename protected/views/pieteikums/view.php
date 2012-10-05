@@ -5,22 +5,21 @@ $this->breadcrumbs=array(
 	'Pieteikums',
 );
 ?>
-<h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
+<h1>Pieteikumi</h1>
 
-<p>
-	Pietekumi
-	<div class="items">
-	<?
-		foreach ($pieteikumi as $key => $value) {
-		echo '<div class="view">';
-			foreach ($value as $k=>$v){
-	?>
-				<b><?=$k?>: </b>
-				<?=$v?><br/>
-	<?
-			}
-		echo '</div>';
-		}
-	?>
-	</div>
-</p>
+<div class="items">
+	<?php foreach ($pieteikumi as $key => $val): ?>
+		<p>
+		<?php foreach ($val as $k => $v): ?>
+			<b><?php echo $k; ?>: </b>
+			<?php echo $v; ?><br />
+		<?php endforeach; ?>
+		</p>
+		<p>
+			<?php echo CHtml::link('Apstiprināt', array('pieteikums/accept', 'id'=>$val['id'])); ?>
+			 / 
+			<?php echo CHtml::link('Noraidīt', array('pieteikums/decline', 'id'=>$val['id'])); ?>
+		</p>
+		<hr />
+	<?php endforeach; ?>
+</div>
