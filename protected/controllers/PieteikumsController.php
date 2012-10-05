@@ -40,6 +40,14 @@ class PieteikumsController extends Controller
 		//var_dump($pieteikumi);
 		$this->render('view', array('pieteikumi'=>$pieteikumi));
 	}
+
+	public function actionAccept() {
+		$this->render('accept');
+	}
+
+	public function actionDecline() {
+		$this->render('decline');
+	}
 	// Uncomment the following methods and override them if needed
 	/*
 	public function filters()
