@@ -57,22 +57,25 @@
             </div><!-- header -->
 
             <div class="mainmenu">
-                <div class="menu_header">
-                    Galvenā izvelne
-                </div>
-                <div class="menu">
-                    <?php $this->widget('zii.widgets.CMenu',array(
-                        'items'=>array(
-                        array('label'=>'Jaunumi', 'url'=>array('/site/index')),
-                        array('label'=>'Dienesta Viesnīcas', 'url'=>array('/site/page', 'view'=>'about')),
-                        array('label'=>'Pieteikties d.v.', 'url'=>array('/site/contact')),
-                        ),
-                    )); ?>
-                </div>
+                <div class="mainmenu_container">
+					<div class="menu_header">
+						Galvenā izvelne
+					</div>
+					<div class="menu">
+						<?php $this->widget('zii.widgets.CMenu',array(
+							'items'=>array(
+							array('label'=>'Jaunumi', 'url'=>array('/site/index')),
+							array('label'=>'Dienesta Viesnīcas', 'url'=>array('/site/page', 'view'=>'about')),
+							array('label'=>'Pieteikties d.v.', 'url'=>array('/pieteikums/add')),
+							),
+						)); ?>
+					</div>
+				</div>
                 <?php if (!Yii::app()->user->isGuest): ?>
                     <?php switch (Yii::app()->user->user_type) {
                         case 1:
                             ?>
+						<div class="mainmenu_container">
                             <div class="menu_header">
                                 Lietotāja izvēlne
                             </div>
@@ -86,11 +89,13 @@
                                 ),
                                 )); ?>
                             </div>
+						</div>
                             <?php
                             break;
 
                         case 2:
                             ?>
+						<div class="mainmenu_container">
                             <div class="menu_header">
                                 Komandanta izvēlne
                             </div>
@@ -106,11 +111,13 @@
                                     ),
                                 )); ?>
                             </div>
+						</div>
                             <?php
                             break;
 
                         case 3:
                             ?>
+						<div class="mainmenu_container">
                             <div class="menu_header">
                                 Administrātora izvēlne
                             </div>
@@ -126,6 +133,7 @@
                                     ),
                                 )); ?>
                             </div>
+						</div>
                             <?php
                             break;
                     } ?>
@@ -141,26 +149,28 @@
                 <?php echo $content; ?>
             </div>
             <div class="mainmenu">
-                <div class="menu_header">
-                    Profila izvēlne
-                </div>
-                <div class="menu">
-                    <?php if (!Yii::app()->user->isGuest): ?>
-                        <?php $this->widget('zii.widgets.CMenu',array(
-                            'items'=>array(
-                            array('label'=>'Profila dati', 'url'=>array('/site/profile')),
-                            array('label'=>'Ziņojumi', 'url'=>array('/site/page', 'view'=>'about')),
-                            array('label'=>'Kontakti', 'url'=>array('/site/contact')),
-                            ),
-                        )); ?>
-                    <?php else: ?>
-                        <?php $this->widget('zii.widgets.CMenu',array(
-                            'items'=>array(
-                            array('label'=>'Pieslēgties', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-                            ),
-                        )); ?>       
-                    <?php endif; ?>
-                </div>
+				<div class="mainmenu_container">
+					<div class="menu_header">
+						Profila izvēlne
+					</div>
+					<div class="menu">
+						<?php if (!Yii::app()->user->isGuest): ?>
+							<?php $this->widget('zii.widgets.CMenu',array(
+								'items'=>array(
+								array('label'=>'Profila dati', 'url'=>array('/site/profile')),
+								array('label'=>'Ziņojumi', 'url'=>array('/site/page', 'view'=>'about')),
+								array('label'=>'Kontakti', 'url'=>array('/site/contact')),
+								),
+							)); ?>
+						<?php else: ?>
+							<?php $this->widget('zii.widgets.CMenu',array(
+								'items'=>array(
+								array('label'=>'Pieslēgties', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+								),
+							)); ?>
+						<?php endif; ?>
+					</div>
+				</div>
             </div><!-- mainmenu -->
             <div class="clear"></div>
 

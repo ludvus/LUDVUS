@@ -70,6 +70,7 @@ body
 #sidebar
 {
 	padding: 20px 20px 20px 0;
+	margin: 20px;
 }
 
 #footer
@@ -96,11 +97,14 @@ body
 
 .mainmenu
 {
-    background:white url(bg.gif) repeat-x left top;
     width: 180px;
     float: left;
     border-radius: 7px;
     margin-top: 5px;
+}
+
+.mainmenu_container{
+	margin-bottom: 10px;
 }
 
 .menu
