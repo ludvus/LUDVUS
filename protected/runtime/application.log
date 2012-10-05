@@ -1283,3 +1283,6 @@ REQUEST_URI=/index.php?r=pieteikums/view
 in C:\xampp\htdocs\protected\views\pieteikums\view.php (18)
 in C:\xampp\htdocs\protected\controllers\PieteikumsController.php (41)
 in C:\xampp\htdocs\index.php (13)
+2012/10/05 15:44:40 [warning] [application] Failed to set unsafe attribute "teksts" of "Pieteikumi".
+in C:\xampp\htdocs\protected\controllers\PieteikumsController.php (21)
+in C:\xampp\htdocs\index.php (13)

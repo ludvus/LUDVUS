@@ -43,6 +43,7 @@ class Pieteikumi extends CActiveRecord
 			array('username, fakultate, kurss, limenis, name, surname', 'required'),
 			array('kurss, limenis', 'numerical', 'integerOnly'=>true),
 			array('username, fakultate, name, surname', 'length', 'max'=>255),
+			array('teksts', 'length', 'max'=>2000),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, username, fakultate, limenis, kurss, teksts, name, surname', 'safe', 'on'=>'search'),
