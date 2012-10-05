@@ -4,6 +4,7 @@ class PieteikumsController extends Controller
 {
 	public function actionIndex()
 	{
+		$this->redirect('add');
 		$this->render('index');
 	}
 
@@ -37,6 +38,8 @@ class PieteikumsController extends Controller
 
 	public function actionView() 
 	{
+		$this->allowUser(3);
+
 		$pieteikumi = Pieteikumi::model()->findAll();
 		//var_dump($pieteikumi);
 		$this->render('view', array('pieteikumi'=>$pieteikumi));
@@ -44,6 +47,8 @@ class PieteikumsController extends Controller
 
 	public function actionAccept($id) 
 	{
+		$this->allowUser(3);
+
 		$pieteikums = Pieteikumi::model()->findByPk($id);
 		$iemitnieki = new Iemitnieki;
 		$users	 	= new Users;
@@ -79,6 +84,8 @@ class PieteikumsController extends Controller
 
 	public function actionDecline($id) 
 	{
+		$this->allowUser(3);
+		
 		$pieteikums = Pieteikumi::model()->findByPk($id);
 		$arhivs     = new ArhivsPieteikumi;
 		$arhivs->attributes = array(
