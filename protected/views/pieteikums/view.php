@@ -9,11 +9,18 @@ $this->breadcrumbs=array(
 
 <p>
 	Pietekumi
+	<div class="items">
 	<?
-		echo '<pre>';
-		var_dump($pieteikumi->username);
-		
-		//print_r($pieteikumi);
-		echo '</pre>';
+		foreach ($pieteikumi as $key => $value) {
+		echo '<div class="view">';
+			foreach ($value as $k=>$v){
 	?>
+				<b><?=$k?>: </b>
+				<?=$v?><br/>
+	<?
+			}
+		echo '</div>';
+		}
+	?>
+	</div>
 </p>

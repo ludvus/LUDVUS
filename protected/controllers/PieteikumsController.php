@@ -37,6 +37,7 @@ class PieteikumsController extends Controller
 
 	public function actionView() {
 		$pieteikumi = Pieteikumi::model()->findAll();
+		//var_dump($pieteikumi);
 		$this->render('view', array('pieteikumi'=>$pieteikumi));
 	}
 	// Uncomment the following methods and override them if needed

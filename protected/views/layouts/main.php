@@ -129,6 +129,7 @@
                                     array('label'=>'Maksājumi', 'url'=>array('/site/contact')),
                                     array('label'=>'Jaunumi', 'url'=>array('/news')),
                                     array('label'=>'Informācija', 'url'=>array('/site/contact')),
+									array('label'=>'Pieteikumi', 'url'=>array('/pieteikums/view')),
                                     array('label'=>'Atslēgties ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'))
                                     ),
                                 )); ?>
