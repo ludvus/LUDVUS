@@ -34,6 +34,11 @@ class PieteikumsController extends Controller
 	{
 		$this->render('incomplete');
 	}
+
+	public function actionView() {
+		$pieteikumi = Pieteikumi::model()->findAll();
+		$this->render('view', array('pieteikumi'=>$pieteikumi));
+	}
 	// Uncomment the following methods and override them if needed
 	/*
 	public function filters()
