@@ -35,18 +35,31 @@ class PieteikumsController extends Controller
 		$this->render('incomplete');
 	}
 
-	public function actionView() {
+	public function actionView() 
+	{
 		$pieteikumi = Pieteikumi::model()->findAll();
 		//var_dump($pieteikumi);
 		$this->render('view', array('pieteikumi'=>$pieteikumi));
 	}
 
-	public function actionAccept() {
+	public function actionAccept($id) 
+	{
 		$this->render('accept');
 	}
 
-	public function actionDecline() {
-		$this->render('decline');
+	public function actionDecline($id) 
+	{
+		$pieteikums = Pieteikumi::model()->findByPk($id);
+		$arhivs     = new ArhivsPieteikumi;
+		$arhivs->attributes = $data;
+		
+		if (!$arhivs->save())
+			$this->redirect(array('site/error'));
+
+		if ($pieteikums->delete())
+			$this->render('decline');
+		else
+			$this->redirect(array('site/error'));
 	}
 	// Uncomment the following methods and override them if needed
 	/*

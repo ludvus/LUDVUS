@@ -16,9 +16,9 @@ $this->breadcrumbs=array(
 		<?php endforeach; ?>
 		</p>
 		<p>
-			<?php echo CHtml::link('Apstiprināt', array('pieteikums/accept', 'id'=>$val['id'])); ?>
+			<?php echo CHtml::link('Apstiprināt', array('pieteikums/accept', 'id'=>$val['id']), array('confirm'=>'Vai tiešām apstiprināt?')); ?>
 			 / 
-			<?php echo CHtml::link('Noraidīt', array('pieteikums/decline', 'id'=>$val['id'])); ?>
+			<?php echo CHtml::link('Noraidīt', array('pieteikums/decline', 'id'=>$val['id']), array('confirm'=>'Vai tiešām noraidīt?')); ?>
 		</p>
 		<hr />
 	<?php endforeach; ?>
