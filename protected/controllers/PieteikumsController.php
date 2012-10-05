@@ -44,22 +44,63 @@ class PieteikumsController extends Controller
 
 	public function actionAccept($id) 
 	{
-		$this->render('accept');
+		$pieteikums = Pieteikumi::model()->findByPk($id);
+		$iemitnieki = new Iemitnieki;
+		$users	 	= new Users;
+
+		$iemitnieki->attributes = array(
+				'vards'=>$pieteikums['name'],
+				'uzvards'=>$pieteikums['surname'],
+				'epasts'=>$pieteikums['username'].'@lu.lv',
+				'fakultates_id'=>$pieteikums['fakultate'],
+				'kurss'=>$pieteikums['kurss'],
+			);
+
+		$pass = rand(10000000, 99999999);
+
+		if ($pieteikums->delete()) {
+			$iemitnieki->save(false);
+
+			$users->attributes = array(
+				'username'=>$pieteikums['username'],
+				'pass'=>sha1($pass),
+				'user_id'=>$iemitnieki->primaryKey,
+				'user_type'=>1
+			);
+
+			$users->save(false);
+
+			$this->sendAcceptMail($pass);
+
+			$this->render('accept', array('pass'=>$pass));
+		} else
+			$this->redirect(array('site/error'));
 	}
 
 	public function actionDecline($id) 
 	{
 		$pieteikums = Pieteikumi::model()->findByPk($id);
 		$arhivs     = new ArhivsPieteikumi;
-		$arhivs->attributes = $data;
+		$arhivs->attributes = array(
+				'username'=>$pieteikums['username'],
+				'fakultate'=>$pieteikums['fakultate'],
+				'limenis'=>$pieteikums['limenis'],
+				'kurss'=>$pieteikums['kurss'],
+				'teksts'=>$pieteikums['teksts'],
+				'name'=>$pieteikums['name'],
+				'surname'=>$pieteikums['surname']
+			);
 		
-		if (!$arhivs->save())
-			$this->redirect(array('site/error'));
-
-		if ($pieteikums->delete())
+		if ($pieteikums->delete()) {
+			$arhivs->save(false);
 			$this->render('decline');
-		else
+		} else
 			$this->redirect(array('site/error'));
+	}
+
+	private function sendAcceptMail($pass)
+	{
+		return true;
 	}
 	// Uncomment the following methods and override them if needed
 	/*
