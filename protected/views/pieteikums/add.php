@@ -53,7 +53,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'teksts'); ?>
-		<?php echo $form->textArea($model,'teksts'); ?>
+		<?php echo $form->textArea($model,'teksts', array('rows'=>5, 'cols'=>25)); ?>
 		<?php echo $form->error($model,'teksts'); ?>
 	</div>
 
