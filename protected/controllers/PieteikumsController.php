@@ -53,6 +53,11 @@ class PieteikumsController extends Controller
 		$iemitnieki = new Iemitnieki;
 		$users	 	= new Users;
 
+		$lietotajs = Users::model()->findByAttributes(array('username'=>$pieteikums['username']));
+
+		if ($lietotajs !== null)
+			throw new CHttpException(403, 'Šāds lietotājs jau ir apstiprināts');
+
 		$iemitnieki->attributes = array(
 				'vards'=>$pieteikums['name'],
 				'uzvards'=>$pieteikums['surname'],
@@ -63,7 +68,7 @@ class PieteikumsController extends Controller
 
 		$pass = rand(10000000, 99999999);
 
-		if ($pieteikums->delete()) {
+		if (Pieteikumi::model()->deleteByPk($id)) {
 			$iemitnieki->save(false);
 
 			$users->attributes = array(
@@ -98,7 +103,7 @@ class PieteikumsController extends Controller
 				'surname'=>$pieteikums['surname']
 			);
 		
-		if ($pieteikums->delete()) {
+		if (Pieteikumi::model()->deleteByPk($id)) {
 			$arhivs->save(false);
 			$this->render('decline');
 		} else

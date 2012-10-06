@@ -1621,3 +1621,97 @@ Stack trace:
 REQUEST_URI=/index.php?r=pieteikums/view
 HTTP_REFERER=http://localhost/index.php?r=pieteikums/view
 ---
+2012/10/06 11:44:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Jums nav tiesību apmeklēt šo lapu' in C:\xampp\htdocs\protected\components\Controller.php:27
+Stack trace:
+#0 C:\xampp\htdocs\protected\controllers\PieteikumsController.php(41): Controller->allowUser(3)
+#1 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): PieteikumsController->actionView()
+#2 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('view')
+#6 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('pieteikums/view')
+#7 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=pieteikums/view
+HTTP_REFERER=http://localhost/index.php?r=pieteikums/accept&id=10
+---
+2012/10/06 11:44:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Jums nav tiesību apmeklēt šo lapu' in C:\xampp\htdocs\protected\components\Controller.php:27
+Stack trace:
+#0 C:\xampp\htdocs\protected\controllers\PieteikumsController.php(41): Controller->allowUser(3)
+#1 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): PieteikumsController->actionView()
+#2 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('view')
+#6 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('pieteikums/view')
+#7 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=pieteikums/view
+HTTP_REFERER=http://localhost/index.php?r=pieteikums/view
+---
+2012/10/06 11:55:24 [error] [php] include(Pieteikums.php): failed to open stream: No such file or directory (C:\xampp\htdocs\yii\YiiBase.php:423)
+Stack trace:
+#0 C:\xampp\htdocs\protected\controllers\PieteikumsController.php(66): spl_autoload_call()
+#1 unknown(0): PieteikumsController->actionAccept()
+#2 C:\xampp\htdocs\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#4 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\web\CController.php(287): PieteikumsController->runAction()
+#6 C:\xampp\htdocs\yii\web\CController.php(266): PieteikumsController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(283): PieteikumsController->run()
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=pieteikums/accept&id=4
+in C:\xampp\htdocs\protected\controllers\PieteikumsController.php (66)
+in C:\xampp\htdocs\index.php (13)
+2012/10/06 11:55:26 [error] [php] include(Pieteikums.php): failed to open stream: No such file or directory (C:\xampp\htdocs\yii\YiiBase.php:423)
+Stack trace:
+#0 C:\xampp\htdocs\protected\controllers\PieteikumsController.php(66): spl_autoload_call()
+#1 unknown(0): PieteikumsController->actionAccept()
+#2 C:\xampp\htdocs\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#3 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#4 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\web\CController.php(287): PieteikumsController->runAction()
+#6 C:\xampp\htdocs\yii\web\CController.php(266): PieteikumsController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(283): PieteikumsController->run()
+#8 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=pieteikums/accept&id=4
+in C:\xampp\htdocs\protected\controllers\PieteikumsController.php (66)
+in C:\xampp\htdocs\index.php (13)
+2012/10/06 12:05:35 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Šāds lietotājs jau ir apstiprināts' in C:\xampp\htdocs\protected\controllers\PieteikumsController.php:59
+Stack trace:
+#0 [internal function]: PieteikumsController->actionAccept('8')
+#1 C:\xampp\htdocs\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(PieteikumsController), Array)
+#2 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(PieteikumsController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('accept')
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('pieteikums/acce...')
+#8 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=pieteikums/accept&id=8
+HTTP_REFERER=http://localhost/index.php?r=pieteikums/view
+---
+2012/10/06 12:05:36 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Šāds lietotājs jau ir apstiprināts' in C:\xampp\htdocs\protected\controllers\PieteikumsController.php:59
+Stack trace:
+#0 [internal function]: PieteikumsController->actionAccept('8')
+#1 C:\xampp\htdocs\yii\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(PieteikumsController), Array)
+#2 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(PieteikumsController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('accept')
+#7 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('pieteikums/acce...')
+#8 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=pieteikums/accept&id=8
+HTTP_REFERER=http://localhost/index.php?r=pieteikums/accept&id=8
+---
