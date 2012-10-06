@@ -75,7 +75,7 @@ class PieteikumsController extends Controller
 
 			$users->save(false);
 
-			$this->sendAcceptMail($pass);
+			$this->sendAcceptMail($pass, $iemitnieki->epasts, $users->username);
 
 			$this->render('accept', array('pass'=>$pass));
 		} else
@@ -105,9 +105,39 @@ class PieteikumsController extends Controller
 			$this->redirect(array('site/error'));
 	}
 
-	private function sendAcceptMail($pass)
+	private function sendAcceptMail($pass, $email, $username)
 	{
-		return true;
+		$from = Yii::app()->params['adminEmail'];
+		$to   = $email;
+		$subject = 'LU Dienesta Viesnīcas pieteikuma apstiprinājums';
+		$body = '
+		<html>
+			<head>
+				<title>LU Dienesta Viesnīcas pieteikuma apstiprinājums</title>
+			</head>
+			<body>
+				<p>Jūsu pieteikums uz dienesta viesnīcu ir apstiprināts.</p>
+				<p>Tagad Jūs varat pieslēgties LUDVUS sistēmai ar šādiem datiem:<br />
+				Lietotājvārds: '.$username.' <br />
+				Parole: '.$pass.'
+				</p>
+
+				<p>
+				Ar cieņu,<br />
+				LUDVUS administrācija
+				</p>
+			</body>
+		</html>
+		';
+
+		$name='=?UTF-8?B?'.base64_encode($username).'?=';
+		$subject='=?UTF-8?B?'.base64_encode($subject).'?=';
+		$headers="From: $name <{$from}>\r\n".
+			"Reply-To: {$from}\r\n".
+			"MIME-Version: 1.0\r\n".
+			"Content-type: text/plain; charset=UTF-8";
+
+		return mail($email,$subject,$body,$headers);
 	}
 	// Uncomment the following methods and override them if needed
 	/*

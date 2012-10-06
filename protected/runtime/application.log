@@ -1592,3 +1592,32 @@ REQUEST_URI=/index.php?r=site/login
 in C:\xampp\htdocs\protected\components\UserIdentity.php (40)
 in C:\xampp\htdocs\protected\models\LoginForm.php (66)
 in C:\xampp\htdocs\protected\controllers\SiteController.php (145)
+2012/10/06 09:51:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Jums nav tiesību apmeklēt šo lapu' in C:\xampp\htdocs\protected\components\Controller.php:27
+Stack trace:
+#0 C:\xampp\htdocs\protected\controllers\PieteikumsController.php(41): Controller->allowUser(3)
+#1 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): PieteikumsController->actionView()
+#2 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('view')
+#6 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('pieteikums/view')
+#7 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=pieteikums/view
+---
+2012/10/06 09:51:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Jums nav tiesību apmeklēt šo lapu' in C:\xampp\htdocs\protected\components\Controller.php:27
+Stack trace:
+#0 C:\xampp\htdocs\protected\controllers\PieteikumsController.php(41): Controller->allowUser(3)
+#1 C:\xampp\htdocs\yii\web\actions\CInlineAction.php(50): PieteikumsController->actionView()
+#2 C:\xampp\htdocs\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii\web\CWebApplication.php(283): CController->run('view')
+#6 C:\xampp\htdocs\yii\web\CWebApplication.php(142): CWebApplication->runController('pieteikums/view')
+#7 C:\xampp\htdocs\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=pieteikums/view
+HTTP_REFERER=http://localhost/index.php?r=pieteikums/view
+---
