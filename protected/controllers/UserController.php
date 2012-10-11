@@ -8,6 +8,22 @@ class UserController extends Controller
 	 */
 	public $layout='//layouts/column2';
 
+	public function actions()
+	{
+		return array(
+			// captcha action renders the CAPTCHA image displayed on the contact page
+			'captcha'=>array(
+				'class'=>'CCaptchaAction',
+				'backColor'=>0xFFFFFF,
+			),
+			// page action renders "static" pages stored under 'protected/views/site/pages'
+			// They can be accessed via: index.php?r=site/page&view=FileName
+			'page'=>array(
+				'class'=>'CViewAction',
+			),
+		);
+	}
+
 	/**
 	 * @return array action filters
 	 */
@@ -127,6 +143,41 @@ class UserController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
+	}
+
+	public function actionShowIemitnieki($id = null)
+	{
+		if ($id === null) 
+		{
+			$model = Users::model()->findAllByAttributes(array('user_type'=>1));
+
+			foreach ($model as $key => $user)
+			{
+				$iemitnieki = Iemitnieki::model()->findByPk($user['user_id']);
+				$data[$user['ID']]['id'] = $user['ID'];
+				$data[$user['ID']]['username'] = $user['username'];
+				$data[$user['ID']]['user_id'] = $user['user_id'];
+				$data[$user['ID']]['vards'] = $iemitnieki['vards'];
+				$data[$user['ID']]['uzvards'] = $iemitnieki['uzvards'];
+				$data[$user['ID']]['epasts'] = $iemitnieki['epasts'];
+			}
+
+			$this->render('list_iemitnieki', array('users'=>$data));
+		}
+		else
+		{
+			$model = Users::model()->findByPk($id);
+			$user = Iemitnieki::model()->findByPk($model->user_id);
+
+			$data['id'] = $model['ID'];
+			$data['username'] = $model['username'];
+			$data['user_id'] = $model['user_id'];
+			$data['vards'] = $user['vards'];
+			$data['uzvards'] = $user['uzvards'];
+			$data['epasts'] = $user['epasts'];
+
+			$this->render('list_iemitnieki', array('user'=>$data));
+		}
 	}
 
 	/**

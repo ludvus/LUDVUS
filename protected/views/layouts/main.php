@@ -156,11 +156,13 @@
 					</div>
 					<div class="menu">
 						<?php if (!Yii::app()->user->isGuest): ?>
+                            <?php $msg = Zinojumi::model()->countByAttributes(array('receiver_id'=>Yii::app()->user->id, 'is_read'=>'N')); ?>
 							<?php $this->widget('zii.widgets.CMenu',array(
 								'items'=>array(
 								array('label'=>'Profila dati', 'url'=>array('/site/profile')),
-								array('label'=>'Ziņojumi', 'url'=>array('/site/page', 'view'=>'about')),
+								array('label'=>'Ziņojumi ('.$msg.')', 'url'=>array('/zinojumi')),
 								array('label'=>'Kontakti', 'url'=>array('/site/contact')),
+                                array('label'=>'Visi lietotāji', 'url'=>array('user/page', 'view'=>'groups')),
 								),
 							)); ?>
 						<?php else: ?>

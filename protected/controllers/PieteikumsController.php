@@ -53,11 +53,6 @@ class PieteikumsController extends Controller
 		$iemitnieki = new Iemitnieki;
 		$users	 	= new Users;
 
-		$lietotajs = Users::model()->findByAttributes(array('username'=>$pieteikums['username']));
-
-		if ($lietotajs !== null)
-			throw new CHttpException(403, 'Šāds lietotājs jau ir apstiprināts');
-
 		$iemitnieki->attributes = array(
 				'vards'=>$pieteikums['name'],
 				'uzvards'=>$pieteikums['surname'],
@@ -68,7 +63,7 @@ class PieteikumsController extends Controller
 
 		$pass = rand(10000000, 99999999);
 
-		if (Pieteikumi::model()->deleteByPk($id)) {
+		if ($pieteikums->delete()) {
 			$iemitnieki->save(false);
 
 			$users->attributes = array(
@@ -80,7 +75,7 @@ class PieteikumsController extends Controller
 
 			$users->save(false);
 
-			$this->sendAcceptMail($pass, $iemitnieki->epasts, $users->username);
+			$this->sendAcceptMail($pass);
 
 			$this->render('accept', array('pass'=>$pass));
 		} else
@@ -103,46 +98,16 @@ class PieteikumsController extends Controller
 				'surname'=>$pieteikums['surname']
 			);
 		
-		if (Pieteikumi::model()->deleteByPk($id)) {
+		if ($pieteikums->delete()) {
 			$arhivs->save(false);
 			$this->render('decline');
 		} else
 			$this->redirect(array('site/error'));
 	}
 
-	private function sendAcceptMail($pass, $email, $username)
+	private function sendAcceptMail($pass)
 	{
-		$from = Yii::app()->params['adminEmail'];
-		$to   = $email;
-		$subject = 'LU Dienesta Viesnīcas pieteikuma apstiprinājums';
-		$body = '
-		<html>
-			<head>
-				<title>LU Dienesta Viesnīcas pieteikuma apstiprinājums</title>
-			</head>
-			<body>
-				<p>Jūsu pieteikums uz dienesta viesnīcu ir apstiprināts.</p>
-				<p>Tagad Jūs varat pieslēgties LUDVUS sistēmai ar šādiem datiem:<br />
-				Lietotājvārds: '.$username.' <br />
-				Parole: '.$pass.'
-				</p>
-
-				<p>
-				Ar cieņu,<br />
-				LUDVUS administrācija
-				</p>
-			</body>
-		</html>
-		';
-
-		$name='=?UTF-8?B?'.base64_encode($username).'?=';
-		$subject='=?UTF-8?B?'.base64_encode($subject).'?=';
-		$headers="From: $name <{$from}>\r\n".
-			"Reply-To: {$from}\r\n".
-			"MIME-Version: 1.0\r\n".
-			"Content-type: text/plain; charset=UTF-8";
-
-		return mail($email,$subject,$body,$headers);
+		return true;
 	}
 	// Uncomment the following methods and override them if needed
 	/*
