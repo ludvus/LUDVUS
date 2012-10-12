@@ -180,6 +180,84 @@ class UserController extends Controller
 		}
 	}
 
+	public function actionShowKomandanti($id = null)
+	{
+		if ($id === null) 
+		{
+			$model = Users::model()->findAllByAttributes(array('user_type'=>2));
+
+			foreach ($model as $key => $user)
+			{
+				$komandanti = Komandanti::model()->findByPk($user['user_id']);
+				$data[$user['ID']]['id'] = $user['ID'];
+				$data[$user['ID']]['username'] = $user['username'];
+				$data[$user['ID']]['user_id'] = $user['user_id'];
+				$data[$user['ID']]['vards'] = $komandanti['vards'];
+				$data[$user['ID']]['uzvards'] = $komandanti['uzvards'];
+				$data[$user['ID']]['epasts'] = $komandanti['epasts'];
+				$data[$user['ID']]['talrunis'] = $komandanti['talrunis'];
+				$data[$user['ID']]['adrese'] = $komandanti['adrese'];
+			}
+
+			$this->render('list_komandanti', array('users'=>$data));
+		}
+		else
+		{
+			$model = Users::model()->findByPk($id);
+			$user = Komandanti::model()->findByPk($model->user_id);
+
+			$data['id'] = $model['ID'];
+			$data['username'] = $model['username'];
+			$data['user_id'] = $model['user_id'];
+			$data['vards'] = $user['vards'];
+			$data['uzvards'] = $user['uzvards'];
+			$data['epasts'] = $user['epasts'];
+			$data['talrunis'] = $user['talrunis'];
+			$data['adrese'] = $user['adrese'];
+
+			$this->render('list_komandanti', array('user'=>$data));
+		}
+	}
+
+	public function actionShowAdministratori($id = null)
+	{
+		if ($id === null) 
+		{
+			$model = Users::model()->findAllByAttributes(array('user_type'=>3));
+
+			foreach ($model as $key => $user)
+			{
+				$administratori = Administratori::model()->findByPk($user['user_id']);
+				$data[$user['ID']]['id'] = $user['ID'];
+				$data[$user['ID']]['username'] = $user['username'];
+				$data[$user['ID']]['user_id'] = $user['user_id'];
+				$data[$user['ID']]['vards'] = $administratori['vards'];
+				$data[$user['ID']]['uzvards'] = $administratori['uzvards'];
+				$data[$user['ID']]['epasts'] = $administratori['epasts'];
+				$data[$user['ID']]['talrunis'] = $administratori['talrunis'];
+				$data[$user['ID']]['adrese'] = $administratori['adrese'];
+			}
+
+			$this->render('list_administratori', array('users'=>$data));
+		}
+		else
+		{
+			$model = Users::model()->findByPk($id);
+			$user = Administratori::model()->findByPk($model->user_id);
+
+			$data['id'] = $model['ID'];
+			$data['username'] = $model['username'];
+			$data['user_id'] = $model['user_id'];
+			$data['vards'] = $user['vards'];
+			$data['uzvards'] = $user['uzvards'];
+			$data['epasts'] = $user['epasts'];
+			$data['talrunis'] = $user['talrunis'];
+			$data['adrese'] = $user['adrese'];
+
+			$this->render('list_administratori', array('user'=>$data));
+		}
+	}
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.

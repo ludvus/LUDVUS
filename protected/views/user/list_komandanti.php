@@ -6,25 +6,25 @@ if (isset($users))
 {
 	$this->breadcrumbs=array(
 		'Lietotāju grupas'=>array('page', 'view'=>'groups'),
-		'Iemītnieki'
+		'Komandanti'
 	);
 }
 elseif (isset($user))
 {
 	$this->breadcrumbs=array(
 		'Lietotāju grupas'=>array('page', 'view'=>'groups'),
-		'Iemītnieki'=>array('showIemitnieki'),
+		'Komandanti'=>array('showKomandanti'),
 		$user['vards'] .' '. $user['uzvards'],
 	);
 }
 ?>
 
 <?php if (isset($users)): ?>
-	<h1>Iemītnieki</h1>
+	<h1>Komandanti</h1>
 
 	<?php foreach ($users as $user): ?>
 		<p>
-			<?php echo CHtml::link($user['vards']. ' '. $user['uzvards'], array('showIemitnieki', 'id'=>$user['id'])); ?>
+			<?php echo CHtml::link($user['vards']. ' '. $user['uzvards'], array('showKomandanti', 'id'=>$user['id'])); ?>
 		</p>
 		<hr />
 	<?php endforeach; ?>
@@ -35,4 +35,6 @@ elseif (isset($user))
 	<p><b>Uzvārds:</b> <?php echo $user['uzvards']; ?></p>
 	<p><b>Studentu apliecības numurs:</b> <?php echo $user['username']; ?></p>
 	<p><b>Epasts:</b> <?php echo $user['epasts']; ?> (<?php echo CHtml::link('Nosūtīt ziņojumu', array('zinojumi/send', 'id'=>$user['id'])); ?>)</p>
+	<p><b>Tālrunis:</b> <?php echo $user['talrunis']; ?></p>
+	<p><b>Var atrast:</b> <?php echo $user['adrese']; ?></p>
 <?php endif; ?>
