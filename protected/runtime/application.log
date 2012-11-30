@@ -2613,3 +2613,29 @@ Stack trace:
 REQUEST_URI=/index.php?r=zinojumi/send&id=5
 HTTP_REFERER=http://localhost/index.php?r=zinojumi/send&id=5
 ---
+2012/11/30 09:36:59 [error] [php] Trying to get property of non-object (/var/pages/ludvus/protected/controllers/ZinojumiController.php:52)
+Stack trace:
+#0 /var/pages/ludvus/yii/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#1 /var/pages/ludvus/yii/web/CController.php(309): CInlineAction->runWithParams()
+#2 /var/pages/ludvus/yii/web/CController.php(287): ZinojumiController->runAction()
+#3 /var/pages/ludvus/yii/web/CController.php(266): ZinojumiController->runActionWithFilters()
+#4 /var/pages/ludvus/yii/web/CWebApplication.php(283): ZinojumiController->run()
+#5 /var/pages/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController()
+#6 /var/pages/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#7 /var/pages/ludvus/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=zinojumi/view&mid=9
+in /var/pages/ludvus/protected/controllers/ZinojumiController.php (52)
+in /var/pages/ludvus/index.php (13)
+2012/11/30 09:37:00 [error] [php] Trying to get property of non-object (/var/pages/ludvus/protected/controllers/ZinojumiController.php:52)
+Stack trace:
+#0 /var/pages/ludvus/yii/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#1 /var/pages/ludvus/yii/web/CController.php(309): CInlineAction->runWithParams()
+#2 /var/pages/ludvus/yii/web/CController.php(287): ZinojumiController->runAction()
+#3 /var/pages/ludvus/yii/web/CController.php(266): ZinojumiController->runActionWithFilters()
+#4 /var/pages/ludvus/yii/web/CWebApplication.php(283): ZinojumiController->run()
+#5 /var/pages/ludvus/yii/web/CWebApplication.php(142): CWebApplication->runController()
+#6 /var/pages/ludvus/yii/base/CApplication.php(162): CWebApplication->processRequest()
+#7 /var/pages/ludvus/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=zinojumi/view&mid=9
+in /var/pages/ludvus/protected/controllers/ZinojumiController.php (52)
+in /var/pages/ludvus/index.php (13)

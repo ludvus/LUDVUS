@@ -66,6 +66,10 @@ body
 {
     padding: 20px;
 }
+#content p{
+	word-break: break-word;
+	text-align: justify;
+}
 
 #sidebar
 {
